@@ -113,7 +113,7 @@
         		</div>
         	</div>
         </div>
-		@include('app.pages.footer')
+		@include('app.partials.footer')
         <script src="{{asset('vendor/jquery/validate.js')}}"></script>
         <script src="{{asset('api/daftar.js')}}"></script>
         <script type="text/javascript">

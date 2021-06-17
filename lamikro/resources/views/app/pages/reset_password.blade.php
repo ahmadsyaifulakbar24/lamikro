@@ -38,7 +38,7 @@
         		</div>
         	</div>
         </div>
-		@include('app.pages.footer')
+		@include('app.partials.footer')
         <script src="{{asset('api/reset_password.js')}}"></script>
     </body>
 </html>

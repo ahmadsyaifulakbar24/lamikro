@@ -52,7 +52,7 @@
 	        	</div>
         	</div>
         </div>
-		@include('app.pages.footer')
+		@include('app.partials.footer')
         <script type="text/javascript">const d = '{{Request::get("d")}}'</script>
         <script src="{{asset('api/new_password.js')}}"></script>
     </body>

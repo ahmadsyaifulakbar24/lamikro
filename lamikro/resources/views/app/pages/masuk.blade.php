@@ -48,7 +48,7 @@
         		</div>
         	</div>
         </div>
-		@include('app.pages.footer')
+		@include('app.partials.footer')
         <script src="{{asset('api/oauth.js')}}"></script>
     </body>
 </html>
