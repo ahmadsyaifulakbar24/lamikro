@@ -1,0 +1,89 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	text-shadow: 3px 3px #000000;
+}
+
+section, footer {
+	margin-top: 100px;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.active {
+	border-bottom: #dc3545 2px solid;
+}
+.navbar-light .navbar-nav .activeSidebar>.nav-link {
+	color: #dc3545 !important;
+}
+.activeSidebar {
+	border-bottom: 0px !important;
+}
+
+.shadow {
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.10);
+}
+
+.section-one {
+	margin-top: 0 !important;
+	padding: 200px 0;
+}
+
+.section-about {
+	margin-top: 0 !important;
+	padding: 100px 0;
+	margin-bottom: 100px;
+}
+
+.section-page {
+	margin-top: 60px !important;
+	margin-bottom: 100px;
+	padding: 100px 0;
+}
+
+.section-feature {
+	margin-top: 0 !important;
+	padding: 100px 0;
+}
+
+.text-lamikro {
+	color: #d82027;
+}
+
+#sidebar {
+	position: fixed;
+	top: 0;
+	right: -250px;
+	width: 250px;
+	height: 100%;
+	background: white;
+	z-index: 1040;
+	border-left: 1px solid #eaebef;
+	transition: 0.2s;
+}
+.overlay {
+	display: none;
+	z-index: 1035;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgb(0,0,0,0.4);
+}
+
+@media screen and (max-width: 768px) {
+	.section-one {
+		padding: 150px 0;
+	}
+}
+@media screen and (max-width: 992px) {
+	.section-one {
+		padding-top: 100px;
+	}
+}
