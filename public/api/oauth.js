@@ -37,11 +37,13 @@ $('#form').submit(function(e){
 								'token-id': token
 							},
 							success: function(result) {
-								if(result.ref_group_user == "J1") {
-									$(location).attr('href',root+'app/admin')
-								} else {
-									$(location).attr('href',root+'app/dashboard')
-								}
+								console.log(result)
+								console.log(root+'app/dashboard')
+								// if(result.ref_group_user == "J1") {
+								// 	$(location).attr('href',root+'app/admin')
+								// } else {
+								// 	$(location).attr('href',root+'app/dashboard')
+								// }
 							}
 						})
 					}
