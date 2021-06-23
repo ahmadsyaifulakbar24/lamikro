@@ -50,8 +50,5 @@
         </div>
 		@include('app.partials.footer')
         <script src="{{asset('api/oauth.js')}}"></script>
-        @if(Session::has('token'))
-        <script>console.log(`{{ Session::get('token')}}`)</script>
-        @endif
     </body>
 </html>

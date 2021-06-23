@@ -20,6 +20,7 @@ $('#form').submit(function(e) {
         success: function(result) {
             let status = result.status
             let token = result.message
+            console.log('api oauth success')
             if (status == true) {
                 $.ajax({
                     url: root + 'session/oauth',
@@ -29,6 +30,7 @@ $('#form').submit(function(e) {
                     },
                     success: function(result) {
                         localStorage.setItem('token', token)
+			            console.log('session oauth success')
                         $.ajax({
                             url: api_url + 'metadata/userdata',
                             type: 'GET',
@@ -38,11 +40,12 @@ $('#form').submit(function(e) {
                             },
                             success: function(result) {
                                 // console.log(result)
-                                if (result.ref_group_user == "J1") {
-                                    location.href = root + 'app/admin'
-                                } else {
-                                    location.href = root + 'app/dashboard'
-                                }
+					            console.log('api userdata success')
+                                // if (result.ref_group_user == "J1") {
+                                //     location.href = root + 'app/admin'
+                                // } else {
+                                //     location.href = root + 'app/dashboard'
+                                // }
                             }
                         })
                     }
