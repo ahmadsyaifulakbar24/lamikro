@@ -38,9 +38,9 @@ $('#form').submit(function(e){
 							},
 							success: function(result) {
 								if(result.ref_group_user == "J1") {
-									$(location).attr('href','app/admin')
+									$(location).attr('href',root+'app/admin')
 								} else {
-									$(location).attr('href','app/dashboard')
+									$(location).attr('href',root+'app/dashboard')
 								}
 							}
 						})
