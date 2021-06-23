@@ -22,7 +22,7 @@ $('#form').submit(function(e){
 			let token = result.message
 			if(status == true) {
 				$.ajax({
-					url: 'session/oauth',
+					url: root+'session/oauth',
 					type: 'GET',
 					data: {
 						token: token
