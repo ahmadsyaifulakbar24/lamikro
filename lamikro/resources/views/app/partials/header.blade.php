@@ -20,6 +20,7 @@
                                     <p class="dropdown-title font-weight-bold" id="accountName"></p>
                                     <p class="dropdown-title-text" id="accountEmail"></p>
                                 </div>
+                                @if (session('role') != 'J1')
                                 <div class="dropdown-body border-top py-2">
                                     <a class="dropdown-list border-0 py-1" href="{{url('app/profil')}}">
                                         <div class="image-wrapper">
@@ -38,6 +39,7 @@
                                         </div>
                                     </a>
                                 </div>
+                                @endif
                                 <div class="dropdown-body border-top py-2">
                                     <a class="dropdown-list border-0 py-1" href="{{url('app/pengaturan')}}">
                                         <div class="image-wrapper">

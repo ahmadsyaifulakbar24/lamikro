@@ -22,26 +22,35 @@ $('#form').submit(function(e) {
             let token = result.message
             if (status == true) {
                 $.ajax({
-                    url: root + 'session/oauth',
+                    url: api_url + 'metadata/userdata',
                     type: 'GET',
-                    data: {
-                        token: token
+                    dataType: 'JSON',
+                    headers: {
+                        'token-id': token
                     },
                     success: function(result) {
+                        // console.log(result)
                         localStorage.setItem('token', token)
+                        let role = result.ref_group_user
+                        let value = result
                         $.ajax({
-                            url: api_url + 'metadata/userdata',
+                            url: root + 'session/oauth',
                             type: 'GET',
-                            dataType: 'JSON',
-                            headers: {
-                                'token-id': token
+                            data: {
+                                token: token,
+                                role: role
                             },
                             success: function(result) {
-                                // console.log(result)
-                                if (result.ref_group_user == "J1") {
+                                if (role == 'J1') {
                                     location.href = root + 'app/admin'
                                 } else {
-                                    location.href = root + 'app/dashboard'
+                                    if (value.tmp_lahir == '' || value.enum_religi == null || value.enum_edu == null || value.enum_prov == null || value.enum_city == null) {
+                                        location.href = root + 'app/profil'
+                                    } else if (value.enum_sektor == null || value.enum_bidang == null || value.tgl_b_us == '0000-00-00' || value.npwp_usaha == '') {
+                                        location.href = root + 'app/profil-usaha'
+                                    } else {
+                                        location.href = root + 'app/dashboard'
+                                    }
                                 }
                             }
                         })

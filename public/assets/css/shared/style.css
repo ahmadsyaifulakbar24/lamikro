@@ -2668,8 +2668,8 @@ input[type="button"].btn-block {
   opacity: 0; }
   .custom-control-input:checked ~ .custom-control-label::before {
     color: #fff;
-    border-color: #4CCEAC;
-    background-color: #4CCEAC; }
+    border-color: #dc3545;
+    background-color: #dc3545; }
   .custom-control-input:focus ~ .custom-control-label::before {
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
   .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
@@ -3766,9 +3766,9 @@ input[type="button"].btn-block {
     color: #332f63; }
 
 .alert-warning {
-  color: #853a2e;
-  background-color: #ffe2de;
-  border-color: #ffd7d1; }
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba; }
   .alert-warning hr {
     border-top-color: #ffc1b8; }
   .alert-warning .alert-link {

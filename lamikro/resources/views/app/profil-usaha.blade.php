@@ -18,7 +18,12 @@
 								<li class="list-inline-item text-muted">Profil Usaha</li>
 							</ul>
 						</div>
-						<div class="alert alert-success fade show none" role="alert" id="alert"></div>
+						<div class="alert alert-warning fade show none" role="alert" id="warning">
+							<i class="mdi mdi-alert-circle-outline pr-2"></i> Harap lengkapi profil usaha.
+						</div>
+						<div class="alert alert-success fade show none" role="alert" id="alert">
+							<i class="mdi mdi-check-circle-outline pr-2"></i> Profil usaha berhasil disimpan.
+						</div>
                         <div class="grid border">
                             <div class="grid-body">
                                 <div class="row border-bottom pb-2 mb-4">
@@ -33,7 +38,7 @@
                                             <img class="profile-img img-lg rounded-circle mr-5 mb-3" src="{{asset('images/store/business.svg')}}" id="businessAvatar">
                                             <div>
                                                 <button class="btn btn-sm mt-3 mb-2 py-0" id="btn-avatar" data-toggle="modal" data-target="#modal-avatar">Ubah foto</button><br>
-                                                <small class="text-muted">Ukuran maksimum 500KB (JPG).</small>
+                                                <small class="text-muted">Ukuran maksimum 500KB (JPG)</small>
                                             </div>
                                         </div>
                                     </div>
@@ -48,24 +53,94 @@
                                     <div class="col-md-8">
                                     	<form id="form">
 	                                        <div class="form-group">
-	                                            <label for="businessName">Nama Usaha</label>
-	                                            <input type="text" class="form-control bg-white" id="businessName">
-	                                            <div class="invalid-feedback" id="businessName-feedback"></div>
+	                                            <label for="company">Nama Usaha</label>
+	                                            <input type="text" class="form-control bg-white" id="company" required>
+	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
-	                                            <label for="businessType">Jenis Usaha</label>
-	                                            <select class="custom-select bg-white" id="businessType"></select>
-	                                            <div class="invalid-feedback" id="businessType-feedback"></div>
+	                                            <label for="alamat_usaha">Alamat Usaha</label>
+	                                            <textarea rows="4" class="form-control bg-white" id="alamat_usaha" required></textarea>
+	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
-	                                            <label for="businessNumber">Nomor IUMK atau NIB (Nomor Induk Berusaha)</label>
-	                                            <input type="text" class="form-control bg-white" id="businessNumber">
-	                                            <div class="invalid-feedback" id="businessNumber-feedback"></div>
+	                                            <label for="jenis_usaha">Jenis Usaha</label>
+	                                            <select class="custom-select bg-white pointer" id="jenis_usaha" required>
+	                                            	<option value="" disabled selected>Pilih</option>
+	                                            </select>
+	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
-	                                            <label for="address">Alamat Usaha</label>
-	                                            <textarea rows="4" class="form-control bg-white" id="businessAddress"></textarea>
-	                                            <div class="invalid-feedback" id="businessAddress-feedback"></div>
+	                                            <label for="enum_sektor">Sektor Usaha</label>
+	                                            <select class="custom-select bg-white pointer" id="enum_sektor" required>
+	                                            	<option value="" disabled selected>Pilih</option>
+	                                            </select>
+	                                            <div class="invalid-feedback"></div>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label for="enum_bidang">Bidang Usaha</label>
+	                                            <select class="custom-select bg-white pointer" id="enum_bidang" required>
+	                                            	<option value="" disabled selected>Pilih</option>
+	                                            </select>
+	                                            <div class="invalid-feedback"></div>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label for="tgl_b_us">Tanggal Pendirian Usaha</label>
+	                                            <input type="date" class="form-control bg-white" id="tgl_b_us" start="2020" required>
+	                                            <div class="invalid-feedback"></div>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label for="npwp_usaha">Nomor NPWP Usaha</label>
+	                                            <input type="tel" class="form-control bg-white npwp" id="npwp_usaha" maxlength="20" required>
+	                                            <div class="invalid-feedback"></div>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label for="iumkm">Nomor IUMK atau NIB (Nomor Induk Berusaha)</label>
+	                                            <input type="text" class="form-control bg-white" id="iumkm" required>
+	                                            <div class="invalid-feedback"></div>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label for="kaya_usaha">Kekayaan Usaha (Asset) per Tahun</label>
+		                                        <div class="input-group mb-3">
+													<div class="input-group-prepend">
+														<span class="input-group-text"><small>Rp</small></span>
+													</div>
+													<input type="tel" class="form-control number" id="kaya_usaha" required>
+		                                            <div class="invalid-feedback"></div>
+												</div>
+											</div>
+	                                        <div class="form-group">
+	                                            <label for="volume_usaha">Volume Usaha (Omset) per Tahun</label>
+		                                        <div class="input-group mb-3">
+													<div class="input-group-prepend">
+														<span class="input-group-text"><small>Rp</small></span>
+													</div>
+													<input type="tel" class="form-control number" id="volume_usaha" required>
+		                                            <div class="invalid-feedback"></div>
+												</div>
+											</div>
+	                                        <div class="form-group">
+	                                            <label for="emp_amount">Jumlah Karyawan</label>
+		                                        <div class="input-group mb-3">
+													<input type="tel" class="form-control number" id="emp_amount" required>
+													<div class="input-group-append">
+														<span class="input-group-text"><small>Orang</small></span>
+													</div>
+		                                            <div class="invalid-feedback"></div>
+												</div>
+											</div>
+	                                        <div class="form-group">
+	                                            <label for="capacity">Kapasitas Produksi per Tahun</label>
+	                                            <input type="text" class="form-control bg-white" id="capacity" required>
+	                                            <div class="invalid-feedback"></div>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label for="koperasi">Anggota Koperasi</label>
+	                                            <select class="custom-select bg-white pointer" id="koperasi" required>
+	                                            	<option value="" disabled selected>Pilih</option>
+	                                            	<option value="1">Ya</option>
+	                                            	<option value="0">Tidak</option>
+	                                            </select>
+	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="d-flex">
 	                                            <button class="btn btn-sm btn-danger mt-4 ml-auto border-0 font-weight-bold" id="submit" disabled>
@@ -111,10 +186,11 @@
             </div>
         </div>
         @include('app.partials.footer')
-        <script type="text/javascript" src="{{asset('vendor/jquery/validate.js')}}"></script>
-        <script type="text/javascript" src="{{asset('vendor/croppie/croppie.js')}}"></script>
-        <script type="text/javascript" src="{{asset('api/avatar.js')}}"></script>
-        <script type="text/javascript" src="{{asset('api/profil-usaha.js')}}"></script>
-        <script type="text/javascript" src="{{asset('api/profil-usaha-update.js')}}"></script>
+        <!-- <script src="{{asset('vendor/jquery/validate.js')}}"></script> -->
+        <script src="{{asset('vendor/jquery/number.js')}}"></script>
+        <script src="{{asset('vendor/croppie/croppie.js')}}"></script>
+        <script src="{{asset('api/avatar.js')}}"></script>
+        <script src="{{asset('api/profil-usaha.js')}}"></script>
+        <!-- <script src="{{asset('api/profil-usaha-update.js')}}"></script> -->
     </body>
 </html>

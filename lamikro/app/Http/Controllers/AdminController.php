@@ -12,7 +12,7 @@ class AdminController extends Controller
     public function adminDashboard()
     {
         $userPerTahun = DB::table('VW_TOTAL_USER_2019')->get();
-        return view('app/dashboard-admin', compact('userPerTahun'));
+        return view('app/admin/total', compact('userPerTahun'));
     }
 
     public function userExport()

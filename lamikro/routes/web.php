@@ -35,46 +35,66 @@ Route::group(['middleware'=>['afterMiddleware']], function () {
 });
 
 Route::group(['middleware'=>['beforeMiddleware']], function () {
-	Route::get('app/dashboard', function() {
-		return view('app/dashboard');
+	Route::group(['middleware'=>['adminMiddleware']], function () {
+		Route::get('app/admin', function() {
+			return view('app/admin/dashboard');
+		});
+		Route::get('app/management-pengguna', function() {
+			return view('app/admin/user');
+		});
+		Route::get('app/management-pengguna/{user_id}', function ($user_id) {
+			return view('app/admin/view-user', compact('user_id'));
+		});
+		Route::get('app/total-pengguna', 'AdminController@adminDashboard');
+		Route::get('app/userExport', 'AdminController@userExport');
 	});
-	Route::get('app/admin', 'AdminController@adminDashboard');
-	Route::get('app/userExport', 'AdminController@userExport');
 	
-	Route::get('app/nama-akun', function() {
-		return view('app/nama-akun');
-	});
-	Route::get('app/entri-jurnal', function() {
-		return view('app/entri-jurnal');
-	});
-	Route::get('app/daftar-jurnal', function() {
-		return view('app/daftar-jurnal');
-	});
+	Route::group(['middleware'=>['userMiddleware']], function () {
+		Route::get('app/dashboard', function() {
+			return view('app/dashboard');
+		});
+		Route::get('app/nama-akun', function() {
+			return view('app/nama-akun');
+		});
+		Route::get('app/entri-jurnal', function() {
+			return view('app/entri-jurnal');
+		});
+		Route::get('app/daftar-jurnal', function() {
+			return view('app/daftar-jurnal');
+		});
 
-	Route::get('app/laporan-laba-rugi', function() {
-		return view('app/labarugi');
-	});
-	Route::get('app/labarugi/download/{date}', function($date) {
-		return view('app/labarugi-download');
-	});
-	Route::get('app/laporan-laba-rugi/account/{acc_code}/{date}', function($acc_code, $date) {
-		return view('app/labarugi-account');
-	});
-	Route::get('app/laporan-laba-rugi/transno/{transno}', function($transno) {
-		return view('app/labarugi-transno');
-	});
+		Route::get('app/laporan-laba-rugi', function() {
+			return view('app/labarugi');
+		});
+		Route::get('app/labarugi/download/{date}', function($date) {
+			return view('app/labarugi-download');
+		});
+		Route::get('app/laporan-laba-rugi/account/{acc_code}/{date}', function($acc_code, $date) {
+			return view('app/labarugi-account');
+		});
+		Route::get('app/laporan-laba-rugi/transno/{transno}', function($transno) {
+			return view('app/labarugi-transno');
+		});
 
-	Route::get('app/laporan-posisi-keuangan', function() {
-		return view('app/neraca');
-	});
-	Route::get('app/neraca/download/{date}', function($date) {
-		return view('app/neraca-download');
-	});
-	Route::get('app/laporan-posisi-keuangan/account/{acc_code}/{date}', function($acc_code, $date) {
-		return view('app/neraca-account');
-	});
-	Route::get('app/laporan-posisi-keuangan/transno/{transno}', function($transno) {
-		return view('app/neraca-transno');
+		Route::get('app/laporan-posisi-keuangan', function() {
+			return view('app/neraca');
+		});
+		Route::get('app/neraca/download/{date}', function($date) {
+			return view('app/neraca-download');
+		});
+		Route::get('app/laporan-posisi-keuangan/account/{acc_code}/{date}', function($acc_code, $date) {
+			return view('app/neraca-account');
+		});
+		Route::get('app/laporan-posisi-keuangan/transno/{transno}', function($transno) {
+			return view('app/neraca-transno');
+		});
+		
+		Route::get('app/profil', function() {
+			return view('app/profil');
+		});
+		Route::get('app/profil-usaha', function() {
+			return view('app/profil-usaha');
+		});
 	});
 
 	Route::get('app/historical', function() {
@@ -85,12 +105,6 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 	});
 	Route::get('app/kontak', function() {
 		return view('app/kontak');
-	});
-	Route::get('app/profil', function() {
-		return view('app/profil');
-	});
-	Route::get('app/profil-usaha', function() {
-		return view('app/profil-usaha');
 	});
 	Route::get('app/pengaturan', function() {
 		return view('app/pengaturan');

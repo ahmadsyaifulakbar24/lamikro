@@ -17,8 +17,11 @@
 								<li class="list-inline-item text-muted">Profil</li>
 							</ul>
 						</div>
+						<div class="alert alert-warning fade show none" role="alert" id="warning">
+							<i class="mdi mdi-alert-circle-outline pr-2"></i> Harap lengkapi profil.
+						</div>
 						<div class="alert alert-success fade show none" role="alert" id="alert">
-							Profil berhasil disimpan.
+							<i class="mdi mdi-check-circle-outline pr-2"></i> Profil berhasil disimpan.
 						</div>
                         <div class="grid border">
                             <div class="grid-body">
@@ -33,8 +36,8 @@
 	                                    <div class="col-md-8">
 	                                        <div class="form-group">
 	                                            <label for="username">Nama Akun</label>
-	                                            <input type="text" class="col-sm-6 col-8 form-control bg-white" id="username">
-	                                            <div class="invalid-feedback" id="username-feedback"></div>
+	                                            <input type="text" class="form-control bg-white" id="username" required>
+	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -48,57 +51,85 @@
 	                                    <div class="col-md-8">
 	                                        <div class="form-group">
 	                                            <label for="name">Nama Lengkap</label>
-	                                            <input type="text" class="form-control bg-white" id="name">
-	                                            <div class="invalid-feedback" id="name-feedback"></div>
+	                                            <input type="text" class="form-control bg-white" id="name" required>
+	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="ktp">Nomor KTP</label>
-	                                            <input type="tel" class="form-control bg-white" id="ktp" maxlength="16">
-	                                            <div class="invalid-feedback" id="ktp-feedback"></div>
+	                                            <input type="tel" class="form-control bg-white" id="ktp" maxlength="16" required>
+	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="npwp">Nomor NPWP (Optional)</label>
-	                                            <input type="tel" class="form-control bg-white" id="npwp" maxlength="20">
-	                                            <div class="invalid-feedback" id="npwp-feedback"></div>
+	                                            <input type="tel" class="form-control bg-white npwp" id="npwp" maxlength="20" required>
+	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-row">
-	                                            <!-- <div class="col-sm-6 form-group">
-	                                                <label for="place">Tempat Lahir</label>
-	                                                <input type="text" class="form-control bg-white" id="place">
-	                                                <div class="invalid-feedback" id="place-feedback"></div>
-	                                            </div> -->
+	                                            <div class="col-sm-6 form-group">
+	                                                <label for="tmp_lahir">Tempat Lahir</label>
+	                                                <input type="text" class="form-control bg-white" id="tmp_lahir" required>
+	                                                <div class="invalid-feedback"></div>
+	                                            </div>
 	                                            <div class="col-sm-6 form-group">
 	                                                <label for="date">Tanggal Lahir</label>
-	                                                <input type="date" class="form-control bg-white" id="date">
-	                                                <div class="invalid-feedback" id="date-feedback"></div>
+	                                                <input type="date" class="form-control bg-white" id="date" required>
+	                                                <div class="invalid-feedback"></div>
 	                                            </div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="address">Jenis Kelamin</label><br>
 	                                            <div class="custom-control custom-radio custom-control-inline">
 		                                            <input type="radio" name="gender" class="custom-control-input" id="male" value="L">
-		                                            <label class="custom-control-label" for="male">Laki-Laki</label>
+		                                            <label class="custom-control-label pointer" for="male">Laki-Laki</label>
 		                                        </div>
 	                                            <div class="custom-control custom-radio custom-control-inline">
 		                                            <input type="radio" name="gender" class="custom-control-input" id="female" value="P">
-		                                            <label class="custom-control-label" for="female">Perempuan</label>
+		                                            <label class="custom-control-label pointer" for="female">Perempuan</label>
 		                                        </div><br>
 	                                            <small class="text-danger none" id="gender-feedback"></small>
 	                                        </div>
 	                                        <div class="form-group">
+	                                            <label for="enum_religi">Agama</label>
+	                                            <select class="custom-select bg-white pointer" id="enum_religi" required>
+	                                            	<option value="" disabled selected>Pilih</option>
+	                                            </select>
+	                                            <div class="invalid-feedback"></div>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label for="enum_edu">Pendidikan</label>
+	                                            <select class="custom-select bg-white pointer" id="enum_edu" required>
+	                                            	<option value="" disabled selected>Pilih</option>
+	                                            </select>
+	                                            <div class="invalid-feedback"></div>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label for="enum_prov">Provinsi</label>
+	                                            <select class="custom-select bg-white pointer" id="enum_prov" required>
+	                                            	<option value="" disabled selected>Pilih</option>
+	                                            </select>
+	                                            <div class="invalid-feedback"></div>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label for="enum_city">Kabupaten/Kota</label>
+	                                            <select class="custom-select bg-white pointer" id="enum_city" required>
+	                                            	<option value="" disabled selected>Pilih</option>
+	                                            </select>
+	                                            <div class="invalid-feedback"></div>
+	                                        </div>
+	                                        <div class="form-group">
 	                                            <label for="address">Alamat Rumah</label>
-	                                            <textarea rows="4" class="form-control bg-white" id="address"></textarea>
-	                                            <div class="invalid-feedback" id="address-feedback"></div>
+	                                            <textarea rows="4" class="form-control bg-white" id="address" required></textarea>
+	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="email">Email</label>
-	                                            <input type="email" class="form-control bg-white" id="email">
-	                                            <div class="invalid-feedback" id="email-feedback"></div>
+	                                            <input type="email" class="form-control bg-white" id="email" required>
+	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="phone">Nomor Telepon</label>
-	                                            <input type="tel" class="form-control bg-white" id="phone">
-	                                            <div class="invalid-feedback" id="phone-feedback"></div>
+	                                            <input type="tel" class="form-control bg-white" id="phone" required>
+	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="d-flex">
 	                                            <button class="btn btn-sm btn-danger mt-4 ml-auto border-0 font-weight-bold" id="submit" disabled>
@@ -116,10 +147,10 @@
             </div>
         </div>
         @include('app.partials.footer')
-        <script type="text/javascript" src="{{asset('vendor/jquery/validate.js')}}"></script>
-        <script type="text/javascript" src="{{asset('api/profil.js')}}"></script>
-        <script type="text/javascript" src="{{asset('api/profil-update.js')}}"></script>
-        <script type="text/javascript">
+        <!-- <script src="{{asset('vendor/jquery/validate.js')}}"></script> -->
+        <script src="{{asset('api/profil.js')}}"></script>
+        <!-- <script src="{{asset('api/profil-update.js')}}"></script> -->
+        <!-- <script>
 			window.snpwp = true
         	$('#npwp').keyup(function(){
         		let npwp = $(this).val().length
@@ -144,6 +175,6 @@
 					window.snpwp = true
 	        	}
         	})
-        </script>
+        </script> -->
     </body>
 </html>
