@@ -53,7 +53,19 @@ $route['default_controller'] = 'services';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['kitchensink/user/all'] = 'Admin/get_all';
-$route['kitchensink/user/(:any)'] = 'Admin/get_one/$1';
-$route['kitchensink/user/u/(:any)'] = 'Admin/update_user/$1';
-$route['kitchensink/user/d/(:any)'] = 'Admin/delete_user/$1';
+// MANAGEMENT USER
+$route['kitchensink/namuV3ey/all'] = 'Admin/get_all';
+$route['kitchensink/namuV3ey/(:any)'] = 'Admin/get_one/$1';
+$route['kitchensink/namuV3ey/u/(:any)'] = 'Admin/update_user/$1';
+$route['kitchensink/namuV3ey/d/(:any)'] = 'Admin/delete_user/$1';
+
+// DASHBOARD
+$route['_dash/Fe3Peesh'] = 'Dashboard/get_gender';
+$route['_dash/Iel9aNah'] = 'Dashboard/get_religion';
+$route['_dash/ieJ2Thei'] = 'Dashboard/get_education';
+$route['_dash/Zae5ohka'] = 'Dashboard/get_province';
+$route['_dash/Zieria2i'] = 'Dashboard/get_bidang_usaha';
+$route['_dash/Ohjoh3eX'] = 'Dashboard/get_uimk_summ';
+$route['_dash/oPaiti3e'] = 'Dashboard/get_npwp_usaha';
+$route['_dash/Esuo6fu9'] = 'Dashboard/get_koperasi';
+$route['_dash/it8Oa6re'] = 'Dashboard/get_usaha_asset';

@@ -364,7 +364,7 @@ class Services extends CI_Controller {
 							'group' => $result['userdata']['group'],
 							'company' => projectbase_post('company'), 
 							'iumkm' => projectbase_post('iumkm'), 
-							'jenis_usaha' => projectbase_post('jenis_usaha'), 
+							// 'jenis_usaha' => projectbase_post('jenis_usaha'), 
 							'alamat_usaha' => projectbase_post('alamat_usaha') 
 						),
 						'accountname' => $result['accountname']
