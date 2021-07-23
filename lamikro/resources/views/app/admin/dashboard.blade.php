@@ -13,44 +13,69 @@
 					<div class="content-viewport">
 	                    <h5 class="font-weight-bold mb-4">Dashboard</h5>
 	                    <div class="row">
-	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-5">
-			                    <p class="font-weight-bold">Total Berdasarkan Jenis Kelamin</p>
-								<canvas id="chartGender"></canvas>
+	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-4">
+	                    		<div class="grid border p-4" style="height:100%">
+				                    <h6 class="font-weight-bold pb-3">Total Berdasarkan Jenis Kelamin</h6>
+									<canvas id="chartGender"></canvas>
+									<div class="d-flex flex-column" id="gender"></div>
+								</div>
+	                    	</div>
+	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-4">
+	                    		<div class="grid border p-4" style="height:100%">
+				                    <h6 class="font-weight-bold pb-3">Total Berdasarkan Agama</h6>
+									<canvas id="chartReligion"></canvas>
+									<div class="d-flex flex-column" id="religion"></div>
+								</div>
+	                    	</div>
+	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-4">
+	                    		<div class="grid border p-4" style="height:100%">
+				                    <h6 class="font-weight-bold pb-3">Total Berdasarkan Pendidikan</h6>
+									<canvas id="chartEducation"></canvas>
+									<div class="d-flex flex-column" id="education"></div>
+								</div>
+	                    	</div>
+	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-4">
+	                    		<div class="grid border p-4" style="height:100%">
+				                    <h6 class="font-weight-bold pb-3">Total Berdasarkan Kepemilikan IUMK atau NIB</h6>
+									<canvas id="chartIUMK"></canvas>
+									<div class="d-flex flex-column" id="iumk"></div>
+								</div>
+	                    	</div>
+	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-4">
+	                    		<div class="grid border p-4" style="height:100%">
+				                    <h6 class="font-weight-bold pb-3">Total Berdasarkan Kepemilikan NPWP Usaha</h6>
+									<canvas id="chartNPWP"></canvas>
+									<div class="d-flex flex-column" id="npwp"></div>
+								</div>
+	                    	</div>
+	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-4">
+	                    		<div class="grid border p-4" style="height:100%">
+				                    <h6 class="font-weight-bold pb-3">Total Berdasarkan Keanggotaan Koperasi</h6>
+									<canvas id="chartKoperasi"></canvas>
+									<div class="d-flex flex-column" id="koperasi"></div>
+								</div>
+	                    	</div>
+	                    	<div class="col-12 mb-4">
+	                    		<div class="grid border p-4" style="height:100%">
+				                    <h6 class="font-weight-bold pb-3">Total Berdasarkan Kekayaan Usaha (Asset) per Tahun</h6>
+									<canvas id="chartAsset"></canvas>
+									<div class="d-flex flex-column" id="asset"></div>
+								</div>
 	                    	</div>
 	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-5">
-			                    <p class="font-weight-bold">Total Berdasarkan Agama</p>
-								<canvas id="chartReligion"></canvas>
-	                    	</div>
-	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-5">
-			                    <p class="font-weight-bold">Total Berdasarkan Pendidikan</p>
-								<canvas id="chartEducation"></canvas>
-	                    	</div>
-	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-5">
-			                    <p class="font-weight-bold">Total Berdasarkan Kepemilikan IUMK atau NIB</p>
-								<canvas id="chartIUMK"></canvas>
-	                    	</div>
-	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-5">
-			                    <p class="font-weight-bold">Total Berdasarkan Kepemilikan NPWP Usaha</p>
-								<canvas id="chartNPWP"></canvas>
-	                    	</div>
-	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-5">
-			                    <p class="font-weight-bold">Total Berdasarkan Keanggotaan Koperasi</p>
-								<canvas id="chartKoperasi"></canvas>
-	                    	</div>
-	                    	<div class="col-12 mb-5">
-			                    <p class="font-weight-bold">Total Berdasarkan Kekayaan Usaha (Asset) per Tahun</p>
-								<canvas id="chartAsset"></canvas>
-	                    	</div>
-	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-5">
-			                    <p class="font-weight-bold">Total Berdasarkan Provinsi</p>
-		                        <div class="grid border mt-2">
+		                        <div class="grid border">
 		                            <div class="item-wrapper">
 		                                <div class="table-responsive">
 		                                    <table class="table table-hover">
 		                                        <thead>
 		                                            <tr>
+		                                                <th colspan="2">
+										                    <h6 class="font-weight-bold py-3">Total Berdasarkan Provinsi</h6>
+										                </th>
+		                                            </tr>
+		                                            <tr>
 		                                                <th class="font-weight-bold">Provinsi</th>
-		                                                <th class="font-weight-bold">Total</th>
+		                                                <th class="font-weight-bold text-right">Total</th>
 		                                            </tr>
 		                                        </thead>
 		                                        <tbody id="table-province"></tbody>
@@ -66,16 +91,20 @@
 		                            </div>
 		                        </div>
 	                    	</div>
-	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-5">
-			                    <p class="font-weight-bold">Total Berdasarkan Bidang Usaha</p>
-								<div class="grid border mt-2">
+	                    	<div class="col-xl-6 col-lg-12 col-md-6">
+								<div class="grid border">
 		                            <div class="item-wrapper">
 		                                <div class="table-responsive">
 		                                    <table class="table table-hover">
 		                                        <thead>
 		                                            <tr>
+		                                                <th colspan="2">
+										                    <h6 class="font-weight-bold py-3">Total Berdasarkan Bidang Usaha</h6>
+										                </th>
+		                                            </tr>
+		                                            <tr>
 		                                                <th class="font-weight-bold">Bidang Usaha</th>
-		                                                <th class="font-weight-bold">Total</th>
+		                                                <th class="font-weight-bold text-right">Total</th>
 		                                            </tr>
 		                                        </thead>
 		                                        <tbody id="table-bidang-usaha"></tbody>
@@ -97,6 +126,7 @@
             </div>
         </div>
         @include('app.partials.footer')
+        <script src="{{asset('vendor/jquery/number.js')}}"></script>
 		<script src="{{asset('api/admin/dashboard.js')}}"></script>
 		<script src="{{asset('assets/vendors/chartjs/chartjs.min.js')}}"></script>
     </body>

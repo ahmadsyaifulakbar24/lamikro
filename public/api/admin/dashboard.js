@@ -12,6 +12,8 @@ $.ajax({
         let data = []
         $.each(result.data, function(index, value) {
             data.push(value.value)
+            append = `<small>${labels[index]}: <b>${convertToNumber(value.value.toString())}</b></small>`
+            $('#gender').append(append)
         })
         var ctx = document.getElementById('chartGender').getContext('2d')
         var chart = new Chart(ctx, {
@@ -48,6 +50,8 @@ $.ajax({
         $.each(result.data, function(index, value) {
             labels.push(value.id)
             data.push(value.value)
+            append = `<small>${labels[index]}: <b>${convertToNumber(value.value.toString())}</b></small>`
+            $('#religion').append(append)
         })
         var ctx = document.getElementById('chartReligion').getContext('2d')
         var chart = new Chart(ctx, {
@@ -96,6 +100,8 @@ $.ajax({
         $.each(result.data, function(index, value) {
             labels.push(value.id)
             data.push(value.value)
+            append = `<small>${labels[index]}: <b>${convertToNumber(value.value.toString())}</b></small>`
+            $('#education').append(append)
         })
         var ctx = document.getElementById('chartEducation').getContext('2d')
         var chart = new Chart(ctx, {
@@ -131,48 +137,6 @@ $.ajax({
     }
 })
 
-// Province
-$.ajax({
-    url: `${api_chart}Zae5ohka`,
-    type: "GET",
-    dataType: "JSON",
-    headers: {
-        'token-id': token
-    },
-    success: function(result) {
-        // console.log(result)
-        $.each(result.data, function(index, value) {
-            append = `<tr>
-            	<td>${value.id}</td>
-            	<td>${value.value}</td>
-        	</tr>`
-            $('#table-province').append(append)
-        })
-        $('#loading-province').remove()
-    }
-})
-
-// Bidang Usaha
-$.ajax({
-    url: `${api_chart}Zieria2i`,
-    type: "GET",
-    dataType: "JSON",
-    headers: {
-        'token-id': token
-    },
-    success: function(result) {
-        // console.log(result)
-        $.each(result.data, function(index, value) {
-            append = `<tr>
-            	<td>${value.id}</td>
-            	<td>${value.value}</td>
-        	</tr>`
-            $('#table-bidang-usaha').append(append)
-        })
-        $('#loading-bidang-usaha').remove()
-    }
-})
-
 // IUMK
 $.ajax({
     url: `${api_chart}Ohjoh3eX`,
@@ -183,10 +147,16 @@ $.ajax({
     },
     success: function(result) {
         // console.log(result)
+        let index = 0
         let labels = ['Sudah', 'Belum']
         let data = []
-        $.each(result.data, function(index, value) {
-            if (index != 'TOTAL') data.push(value)
+        $.each(result.data, function(key, value) {
+            if (key != 'TOTAL') {
+            	data.push(value)
+	            append = `<small>${labels[index]}: <b>${convertToNumber(value.toString())}</b></small>`
+	            $('#iumk').append(append)
+	            index++
+	        }
         })
         var ctx = document.getElementById('chartIUMK').getContext('2d')
         var chart = new Chart(ctx, {
@@ -217,10 +187,16 @@ $.ajax({
     },
     success: function(result) {
         // console.log(result)
+        let index = 0
         let labels = ['Sudah', 'Belum']
         let data = []
-        $.each(result.data, function(index, value) {
-            if (index != 'TOTAL') data.push(value)
+        $.each(result.data, function(key, value) {
+            if (key != 'TOTAL') {
+            	data.push(value)
+	            append = `<small>${labels[index]}: <b>${convertToNumber(value.toString())}</b></small>`
+	            $('#npwp').append(append)
+	            index++
+	        }
         })
         var ctx = document.getElementById('chartNPWP').getContext('2d')
         var chart = new Chart(ctx, {
@@ -251,10 +227,16 @@ $.ajax({
     },
     success: function(result) {
         // console.log(result)
-        let labels = ['Belum', 'Sudah']
+        let index = 0
+        let labels = ['Sudah', 'Belum']
         let data = []
-        $.each(result.data, function(index, value) {
-            if (index != 'TOTAL') data.push(value)
+        $.each(result.data, function(key, value) {
+            if (key != 'TOTAL') {
+            	data.push(value)
+	            append = `<small>${labels[index]}: <b>${convertToNumber(value.toString())}</b></small>`
+	            $('#koperasi').append(append)
+	            index++
+	        }
         })
         var ctx = document.getElementById('chartKoperasi').getContext('2d')
         var chart = new Chart(ctx, {
@@ -265,8 +247,8 @@ $.ajax({
                     label: 'Total',
                     data: data,
                     backgroundColor: [
-                        'rgb(255, 99, 132)',
-                        'rgb(54, 162, 235)'
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 99, 132)'
                     ]
                 }]
             },
@@ -290,6 +272,10 @@ $.ajax({
         data.push(result.data.MIKRO)
         data.push(result.data.KECIL)
         data.push(result.data.MENENGAH)
+        for (let index = 0; index < 3; index++) {
+            append = `<small>${labels[index]}: <b>${convertToNumber(data[index].toString())}</b></small>`
+            $('#asset').append(append)
+        }
         var ctx = document.getElementById('chartAsset').getContext('2d')
         var chart = new Chart(ctx, {
             type: 'bar',
@@ -313,5 +299,47 @@ $.ajax({
             },
             options: {}
         })
+    }
+})
+
+// Province
+$.ajax({
+    url: `${api_chart}Zae5ohka`,
+    type: "GET",
+    dataType: "JSON",
+    headers: {
+        'token-id': token
+    },
+    success: function(result) {
+        // console.log(result)
+        $.each(result.data, function(index, value) {
+            append = `<tr>
+            	<td>${value.id}</td>
+            	<td class="text-right">${convertToNumber(value.value.toString())}</td>
+        	</tr>`
+            $('#table-province').append(append)
+        })
+        $('#loading-province').remove()
+    }
+})
+
+// Bidang Usaha
+$.ajax({
+    url: `${api_chart}Zieria2i`,
+    type: "GET",
+    dataType: "JSON",
+    headers: {
+        'token-id': token
+    },
+    success: function(result) {
+        // console.log(result)
+        $.each(result.data, function(index, value) {
+            append = `<tr>
+            	<td>${value.id}</td>
+            	<td class="text-right">${convertToNumber(value.value.toString())}</td>
+        	</tr>`
+            $('#table-bidang-usaha').append(append)
+        })
+        $('#loading-bidang-usaha').remove()
     }
 })
