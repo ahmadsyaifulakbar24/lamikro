@@ -63,13 +63,6 @@
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
-	                                            <label for="jenis_usaha">Jenis Usaha</label>
-	                                            <select class="custom-select bg-white pointer" id="jenis_usaha" required>
-	                                            	<option value="" disabled selected>Pilih</option>
-	                                            </select>
-	                                            <div class="invalid-feedback"></div>
-	                                        </div>
-	                                        <div class="form-group">
 	                                            <label for="enum_sektor">Sektor Usaha</label>
 	                                            <select class="custom-select bg-white pointer" id="enum_sektor" required>
 	                                            	<option value="" disabled selected>Pilih</option>

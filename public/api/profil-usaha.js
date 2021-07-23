@@ -29,21 +29,21 @@ $.ajax({
 })
 
 // Jenis Usaha
-$.ajax({
-    url: api_url + 'jenisUsaha',
-    type: 'GET',
-    dataType: 'JSON',
-    headers: {
-        'token-id': token
-    },
-    success: function(result) {
-        $.each(result, function(index, value) {
-            // console.log(value)
-            append = `<option value="${value.id}">${value.parameter}</option>`
-	        $('#jenis_usaha').append(append)
-        })
-    }
-})
+// $.ajax({
+//     url: api_url + 'jenisUsaha',
+//     type: 'GET',
+//     dataType: 'JSON',
+//     headers: {
+//         'token-id': token
+//     },
+//     success: function(result) {
+//         $.each(result, function(index, value) {
+//             // console.log(value)
+//             append = `<option value="${value.id}">${value.parameter}</option>`
+// 	        $('#jenis_usaha').append(append)
+//         })
+//     }
+// })
 
 $(document).ajaxStop(function() {
 	stop == false ? get_data() : ''
@@ -61,7 +61,6 @@ $.ajax({
         // console.log(result)
         $('#company').val(result.company)
         $('#alamat_usaha').val(result.alamat_usaha)
-        $('#jenis_usaha').val(result.jenis_usaha)
         $('#enum_sektor').val(result.enum_sektor)
         $('#enum_bidang').val(result.enum_bidang)
         $('#tgl_b_us').val(result.tgl_b_us)
@@ -91,7 +90,6 @@ $('#form').submit(function(e) {
 
     let company = $('#company').val()
     let alamat_usaha = $('#alamat_usaha').val()
-    let jenis_usaha = $('#jenis_usaha').val()
     let enum_sektor = $('#enum_sektor').val()
     let enum_bidang = $('#enum_bidang').val()
     let tgl_b_us = $('#tgl_b_us').val()
@@ -113,7 +111,6 @@ $('#form').submit(function(e) {
         data: {
             company: company,
             alamat_usaha: alamat_usaha,
-            jenis_usaha: jenis_usaha,
             enum_sektor: enum_sektor,
             enum_bidang: enum_bidang,
             tgl_b_us: tgl_b_us,

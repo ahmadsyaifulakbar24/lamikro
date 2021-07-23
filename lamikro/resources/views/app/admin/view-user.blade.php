@@ -165,13 +165,6 @@
 		                                            <div class="invalid-feedback"></div>
 		                                        </div>
 		                                        <div class="form-group">
-		                                            <label for="jenis_">Jenis Usaha</label>
-		                                            <select class="custom-select bg-white pointer" id="jenis_" required>
-		                                            	<option value="" disabled selected>Pilih</option>
-		                                            </select>
-		                                            <div class="invalid-feedback"></div>
-		                                        </div>
-		                                        <div class="form-group">
 		                                            <label for="sektor_">Sektor Usaha</label>
 		                                            <select class="custom-select bg-white pointer" id="sektor_" required>
 		                                            	<option value="" disabled selected>Pilih</option>

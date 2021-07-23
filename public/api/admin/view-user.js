@@ -91,21 +91,21 @@ $.ajax({
 })
 
 // Jenis Usaha
-$.ajax({
-    url: api_url + 'jenisUsaha',
-    type: 'GET',
-    dataType: 'JSON',
-    headers: {
-        'token-id': token
-    },
-    success: function(result) {
-        $('#jenis_usaha').html(`<option value="" disabled selected>Pilih</option>`)
-        $.each(result, function(index, value) {
-            append = `<option value="${value.id}">${value.parameter}</option>`
-	        $('#jenis_').append(append)
-        })
-    }
-})
+// $.ajax({
+//     url: api_url + 'jenisUsaha',
+//     type: 'GET',
+//     dataType: 'JSON',
+//     headers: {
+//         'token-id': token
+//     },
+//     success: function(result) {
+//         $('#jenis_usaha').html(`<option value="" disabled selected>Pilih</option>`)
+//         $.each(result, function(index, value) {
+//             append = `<option value="${value.id}">${value.parameter}</option>`
+// 	        $('#jenis_').append(append)
+//         })
+//     }
+// })
 
 let stop = false
 
@@ -150,7 +150,6 @@ function get_data() {
 	            // Usaha
 	            $('#company').val(value.company)
 	            $('#alamat_usaha').val(value.alamat_usaha)
-	            // $('#jenis_').val(value.jenis_)
 	            $('#sektor_').val(value.sektor_)
 	            $('#bidang_').val(value.bidang_)
 	            $('#tgl_b_us').val(value.tgl_b_us)
