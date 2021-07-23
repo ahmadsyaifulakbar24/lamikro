@@ -14,13 +14,13 @@
 						<li class="{{Request::is('app/total-pengguna')?'active':''}}">
 							<a href="{{url('app/total-pengguna')}}">
 								<span class="link-title">Total Pengguna</span>
-								<i class="mdi mdi-2x mdi-file-document-box-outline link-icon"></i>
+								<i class="mdi mdi-2x mdi-account-group-outline link-icon"></i>
 							</a>
 						</li>
 						<li class="{{Request::is('app/management-pengguna')?'active':''}}">
 							<a href="{{url('app/management-pengguna')}}">
 								<span class="link-title">Management Pengguna</span>
-								<i class="mdi mdi-2x mdi-file-document-box-outline link-icon"></i>
+								<i class="mdi mdi-2x mdi-account-edit-outline link-icon"></i>
 							</a>
 						</li>
 					</div>
