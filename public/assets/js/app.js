@@ -49,6 +49,14 @@ $('#logout').click(function() {
     })
 })
 
+function delay(fn, ms) {
+    let timer = 0
+    return function(...args) {
+        clearTimeout(timer)
+        timer = setTimeout(fn.bind(this, ...args), ms || 0)
+    }
+}
+
 function formatNpwp(value) {
     value = value.replace(/[A-Za-z\W\s_]+/g, '');
     let split = 6;

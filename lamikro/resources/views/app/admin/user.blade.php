@@ -19,10 +19,7 @@
 	                                    <small class="font-weight-500 py-2">Cari Pengguna:</small>
 	                                </div>
 	                                <div class="col">
-	                                    <input type="text" id="search" class="form-control bg-white" autocomplete="off">
-	                                </div>
-	                                <div class="col-sm-2 col-3">
-	                                    <button class="btn btn-sm btn-danger btn-block font-weight-bold">Cari</button>
+	                                    <input type="text" id="search" class="form-control bg-white" autocomplete="off" placeholder="Nama Lengkap/Nomor KTP/Nama Akun">
 	                                </div>
 	                            </div>
 	                        </form>
@@ -35,6 +32,8 @@
                                             <tr>
                                                 <th class="font-weight-bold text-center">No.</th>
                                                 <th class="font-weight-bold">Nama Lengkap</th>
+                                                <th class="font-weight-bold">Nomor KTP</th>
+                                                <th class="font-weight-bold">Nama Akun</th>
                                                 <th class="font-weight-bold">Email</th>
                                                 <th class="font-weight-bold">Nomor Telepon</th>
                                                 <th class="font-weight-bold">Nama Usaha</th>

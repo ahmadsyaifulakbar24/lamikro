@@ -26,7 +26,9 @@ function get_data(query, page) {
                 $.each(result.data, function(index, value) {
                     append = `<tr data-id="${value._id}" data-name="${value.name}">
 		            	<td class="text-center">${from + 1}.</td>
-		            	<td><a href="${root}app/management-pengguna/${value._id}">${value.name}</a></td>
+		            	<td><a href="${root}app/management-pengguna/${value._id}" class="text-danger">${value.name}</a></td>
+		            	<td>${value.no_ktp}</td>
+		            	<td>${value.username}</td>
 		            	<td>${value.email}</td>
 		            	<td>${value.phone_number}</td>
 		            	<td>${value.company}</td>
@@ -45,7 +47,13 @@ function get_data(query, page) {
                     $('#prev').removeClass('disabled')
                     $('#next').removeClass('disabled')
                 }
-                $('#pagination').show()
+                if (page == '1') {
+	                if (from >= (parseInt(page) * 30)) {
+		                $('#pagination').show()
+	                } else {
+		                $('#pagination').hide()
+	                }
+	            }
             } else {
                 $('#empty').show()
                 if (page == 1) {
@@ -79,22 +87,28 @@ $('.page-item').click(function() {
     }
 })
 
-$('#form-search').submit(function(e) {
-    e.preventDefault()
-    statusSearch = true
-    let search = $('#search').val()
-    currentSearch = search
-    get_data(currentSearch, 1)
-})
-
-$('#search').keyup(function() {
-    let val = $(this).val()
-    if (val.length == 0 && statusSearch == true) {
-        currentSearch = ''
-        get_data(currentSearch, 1)
-        statusSearch = false
+$('#search').keyup(function(e) {
+    if (e.which <= 90 && e.which >= 48 || e.which >= 96 && e.which <= 105 || e.which == 8) {
+        $('#empty').hide()
+        $('#loading').show()
+        $('#table-pengguna').html('')
+        $('#pagination').hide()
     }
 })
+$('#search').keyup(delay(function(e) {
+    if (e.which <= 90 && e.which >= 48 || e.which >= 96 && e.which <= 105 || e.which == 8) {
+        let val = $(this).val()
+        if (val.length == 0 && statusSearch == true) {
+            currentSearch = ''
+            get_data(currentSearch, 1)
+            statusSearch = false
+        } else {
+            statusSearch = true
+            currentSearch = val
+            get_data(currentSearch, 1)
+        }
+    }
+}, 1000))
 
 $(document).on('click', '.delete', function() {
     let id = $(this).closest('tr').attr('data-id')
@@ -117,6 +131,8 @@ $('#delete').click(function() {
         success: function(result) {
             get_data(currentSearch, 1)
             $('#modal-delete').modal('hide')
+        },
+        complete: function() {
             $('#delete').attr('disabled', false)
         }
     })
