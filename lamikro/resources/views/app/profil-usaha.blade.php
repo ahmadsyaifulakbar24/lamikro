@@ -82,13 +82,13 @@
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
-	                                            <label for="npwp_usaha">Nomor NPWP Usaha</label>
-	                                            <input type="tel" class="form-control bg-white npwp" id="npwp_usaha" maxlength="20" required>
+	                                            <label for="iumkm">Nomor IUMK atau NIB (Nomor Induk Berusaha)</label>
+	                                            <input type="text" class="form-control bg-white" id="iumkm" required>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
-	                                            <label for="iumkm">Nomor IUMK atau NIB (Nomor Induk Berusaha)</label>
-	                                            <input type="text" class="form-control bg-white" id="iumkm" required>
+	                                            <label for="npwp_usaha">NPWP Usaha</label>
+	                                            <input type="tel" class="form-control bg-white npwp" id="npwp_usaha" maxlength="20" required>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
@@ -179,7 +179,6 @@
             </div>
         </div>
         @include('app.partials.footer')
-        <!-- <script src="{{asset('vendor/jquery/validate.js')}}"></script> -->
         <script src="{{asset('vendor/jquery/number.js')}}"></script>
         <script src="{{asset('vendor/croppie/croppie.js')}}"></script>
         <script src="{{asset('api/avatar.js')}}"></script>

@@ -55,28 +55,6 @@
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
-	                                            <label for="ktp">Nomor KTP</label>
-	                                            <input type="tel" class="form-control bg-white" id="ktp" maxlength="16" required>
-	                                            <div class="invalid-feedback"></div>
-	                                        </div>
-	                                        <div class="form-group">
-	                                            <label for="npwp">Nomor NPWP (Optional)</label>
-	                                            <input type="tel" class="form-control bg-white npwp" id="npwp" maxlength="20" required>
-	                                            <div class="invalid-feedback"></div>
-	                                        </div>
-	                                        <div class="form-row">
-	                                            <div class="col-sm-6 form-group">
-	                                                <label for="tmp_lahir">Tempat Lahir</label>
-	                                                <input type="text" class="form-control bg-white" id="tmp_lahir" required>
-	                                                <div class="invalid-feedback"></div>
-	                                            </div>
-	                                            <div class="col-sm-6 form-group">
-	                                                <label for="date">Tanggal Lahir</label>
-	                                                <input type="date" class="form-control bg-white" id="date" required>
-	                                                <div class="invalid-feedback"></div>
-	                                            </div>
-	                                        </div>
-	                                        <div class="form-group">
 	                                            <label for="address">Jenis Kelamin</label><br>
 	                                            <div class="custom-control custom-radio custom-control-inline">
 		                                            <input type="radio" name="gender" class="custom-control-input" id="male" value="L">
@@ -96,10 +74,47 @@
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
-	                                            <label for="enum_edu">Pendidikan</label>
+	                                            <label for="ktp">Nomor Induk Kependudukan (NIK)</label>
+	                                            <input type="tel" class="form-control bg-white" id="ktp" maxlength="16" required>
+	                                            <div class="invalid-feedback"></div>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label for="npwp">NPWP Pribadi</label>
+	                                            <input type="tel" class="form-control bg-white npwp" id="npwp" maxlength="20" required>
+	                                            <div class="invalid-feedback"></div>
+	                                        </div>
+	                                        <div class="form-row">
+	                                            <div class="col-sm-6 form-group">
+	                                                <label for="tmp_lahir">Tempat Lahir</label>
+	                                                <input type="text" class="form-control bg-white" id="tmp_lahir" required>
+	                                                <div class="invalid-feedback"></div>
+	                                            </div>
+	                                            <div class="col-sm-6 form-group">
+	                                                <label for="date">Tanggal Lahir</label>
+	                                                <input type="date" class="form-control bg-white" id="date" required>
+	                                                <div class="invalid-feedback"></div>
+	                                            </div>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label for="enum_edu">Pendidikan Terakhir</label>
 	                                            <select class="custom-select bg-white pointer" id="enum_edu" required>
 	                                            	<option value="" disabled selected>Pilih</option>
 	                                            </select>
+	                                            <div class="invalid-feedback"></div>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label for="phone">Nomor Telepon</label>
+	                                            <input type="tel" class="form-control bg-white" id="phone" required>
+	                                            <div class="invalid-feedback"></div>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label for="email">Email</label>
+	                                            <input type="email" class="form-control bg-white" id="email" required>
+	                                            <div class="invalid-feedback"></div>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label for="address">Alamat Rumah</label>
+	                                            <textarea rows="4" class="form-control bg-white" id="address" required></textarea>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
@@ -114,21 +129,6 @@
 	                                            <select class="custom-select bg-white pointer" id="enum_city" required>
 	                                            	<option value="" disabled selected>Pilih</option>
 	                                            </select>
-	                                            <div class="invalid-feedback"></div>
-	                                        </div>
-	                                        <div class="form-group">
-	                                            <label for="address">Alamat Rumah</label>
-	                                            <textarea rows="4" class="form-control bg-white" id="address" required></textarea>
-	                                            <div class="invalid-feedback"></div>
-	                                        </div>
-	                                        <div class="form-group">
-	                                            <label for="email">Email</label>
-	                                            <input type="email" class="form-control bg-white" id="email" required>
-	                                            <div class="invalid-feedback"></div>
-	                                        </div>
-	                                        <div class="form-group">
-	                                            <label for="phone">Nomor Telepon</label>
-	                                            <input type="tel" class="form-control bg-white" id="phone" required>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="d-flex">
@@ -147,34 +147,6 @@
             </div>
         </div>
         @include('app.partials.footer')
-        <!-- <script src="{{asset('vendor/jquery/validate.js')}}"></script> -->
         <script src="{{asset('api/profil.js')}}"></script>
-        <!-- <script src="{{asset('api/profil-update.js')}}"></script> -->
-        <!-- <script>
-			window.snpwp = true
-        	$('#npwp').keyup(function(){
-        		let npwp = $(this).val().length
-        		if(npwp != 0) {
-	        		if(npwp < 15) {
-	        			$(this).addClass('is-invalid')
-	        			$('#npwp-feedback').html('Masukkan 15 digit angka.')
-						window.snpwp = false
-	        		}
-	        		else if(npwp == 15) {
-	        			$(this).val(formatNPWP($(this).val()))
-	        			$(this).removeClass('is-invalid')
-						window.snpwp = true
-	        		}
-	        		else if(npwp < 20) {
-	        			$(this).val('')
-	        			$(this).removeClass('is-invalid')
-						window.snpwp = true
-	        		}
-	        	} else {
-        			$(this).removeClass('is-invalid')
-					window.snpwp = true
-	        	}
-        	})
-        </script> -->
     </body>
 </html>

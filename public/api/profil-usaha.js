@@ -66,9 +66,9 @@ $.ajax({
         $('#tgl_b_us').val(result.tgl_b_us)
         $('#npwp_usaha').val(result.npwp_usaha)
         $('#iumkm').val(result.iumkm)
-        result.kaya_usaha != '0' ? $('#kaya_usaha').val(result.kaya_usaha) : ''
-        result.volume_usaha != '0' ? $('#volume_usaha').val(result.volume_usaha) : ''
-        result.emp_amount != '0' ? $('#emp_amount').val(result.emp_amount) : ''
+        result.kaya_usaha != '0' ? $('#kaya_usaha').val(convert(result.kaya_usaha)) : ''
+        result.volume_usaha != '0' ? $('#volume_usaha').val(convert(result.volume_usaha)) : ''
+        result.emp_amount != '0' ? $('#emp_amount').val(convert(result.emp_amount)) : ''
         result.capacity != '0' ? $('#capacity').val(result.capacity) : ''
         $('#koperasi').val(result.koperasi)
         if (result.enum_sektor == null || result.enum_bidang == null || result.tgl_b_us == '0000-00-00' || result.npwp_usaha == '') {
@@ -95,9 +95,9 @@ $('#form').submit(function(e) {
     let tgl_b_us = $('#tgl_b_us').val()
     let npwp_usaha = $('#npwp_usaha').val()
     let iumkm = $('#iumkm').val()
-    let kaya_usaha = $('#kaya_usaha').val()
-    let volume_usaha = $('#volume_usaha').val()
-    let emp_amount = $('#emp_amount').val()
+    let kaya_usaha = number($('#kaya_usaha').val())
+    let volume_usaha = number($('#volume_usaha').val())
+    let emp_amount = number($('#emp_amount').val())
     let capacity = $('#capacity').val()
     let koperasi = $('#koperasi').val()
 
