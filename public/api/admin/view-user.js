@@ -7,7 +7,7 @@ $.ajax({
         $.each(result, function(index, value) {
             // console.log(value)
             append = `<option value="${value.id}">${value.parameter}</option>`
-            $('#religi_').append(append)
+            $('#enum_religi').append(append)
         })
     }
 })
@@ -21,7 +21,7 @@ $.ajax({
         $.each(result, function(index, value) {
             // console.log(value)
             append = `<option value="${value.id}">${value.parameter}</option>`
-            $('#edu_').append(append)
+            $('#enum_edu').append(append)
         })
     }
 })
@@ -35,7 +35,7 @@ $.ajax({
         // console.log(result)
         $.each(result, function(index, value) {
             append = `<option value="${value.id}">${value.value}</option>`
-            $('#provinsi_').append(append)
+            $('#enum_prov').append(append)
         })
     }
 })
@@ -48,17 +48,17 @@ function get_kota(province, districts) {
         dataType: 'JSON',
         success: function(result) {
             // console.log(result)
-            $('#kab_kota_').html(`<option value="" disabled selected>Pilih</option>`)
+            $('#enum_city').html(`<option value="" disabled selected>Pilih</option>`)
             $.each(result, function(index, value) {
                 append = `<option value="${value.id}">${value.value}</option>`
-                $('#kab_kota_').append(append)
+                $('#enum_city').append(append)
             })
-            $('#kab_kota_').val(districts)
+            $('#enum_city').val(districts)
         }
     })
 }
 
-$('#provinsi_').change(function() {
+$('#enum_prov').change(function() {
     get_kota($(this).val())
 })
 
@@ -71,7 +71,7 @@ $.ajax({
         $.each(result, function(index, value) {
             // console.log(value)
             append = `<option value="${value.id}">${value.parameter}</option>`
-            $('#sektor_').append(append)
+            $('#enum_sektor').append(append)
         })
     }
 })
@@ -85,7 +85,7 @@ $.ajax({
         $.each(result, function(index, value) {
             // console.log(value)
             append = `<option value="${value.id}">${value.parameter}</option>`
-            $('#bidang_').append(append)
+            $('#enum_bidang').append(append)
         })
     }
 })
@@ -139,9 +139,9 @@ function get_data() {
                         $('#female').attr('checked', true)
                     }
                 }
-                $('#religi_').val(value.religi_)
-                $('#edu_').val(value.edu_)
-                $('#provinsi_').val(value.provinsi_)
+                $('#enum_religi').val(value.religi_)
+                $('#enum_edu').val(value.edu_)
+                $('#enum_prov').val(value.provinsi_)
                 get_kota(value.provinsi_, value.kab_kota_)
                 $('#address').val(value.address)
                 $('#email').val(value.email)
@@ -150,16 +150,18 @@ function get_data() {
                 // Usaha
                 $('#company').val(value.company)
                 $('#alamat_usaha').val(value.alamat_usaha)
-                $('#sektor_').val(value.sektor_)
-                $('#bidang_').val(value.bidang_)
+                $('#enum_sektor').val(value.sektor_)
+                $('#enum_bidang').val(value.bidang_)
                 $('#tgl_b_us').val(value.tgl_b_us)
                 $('#npwp_usaha').val(value.npwp_usaha)
                 $('#iumkm').val(value.iumkm)
-                value.kaya_usaha != '0' ? $('#kaya_usaha').val(value.kaya_usaha) : ''
-                value.volume_usaha != '0' ? $('#volume_usaha').val(value.volume_usaha) : ''
-                value.emp_amount != '0' ? $('#emp_amount').val(value.emp_amount) : ''
+                value.kaya_usaha != '0' ? $('#kaya_usaha').val(convert(value.kaya_usaha)) : ''
+                value.volume_usaha != '0' ? $('#volume_usaha').val(convert(value.volume_usaha)) : ''
+                value.emp_amount != '0' ? $('#emp_amount').val(convert(value.emp_amount)) : ''
                 value.capacity != '0' ? $('#capacity').val(value.capacity) : ''
                 value.koperasi == 'Ya' ? $('#koperasi').val(1) : $('#koperasi').val(0)
+
+                $('#submit').attr('disabled', false)
             } else {
                 window.history.back()
             }
@@ -169,6 +171,82 @@ function get_data() {
         }
     })
 }
+
+$('#form').submit(function(e) {
+    e.preventDefault()
+    $('#loading').show()
+    $('#submit').attr('disabled', true)
+    $('.is-invalid').removeClass('is-invalid')
+
+    $.ajax({
+        url: `${api_kitchensink}namuV3ey/u/${user_id}`,
+        type: 'POST',
+        dataType: 'JSON',
+        headers: {
+            'token-id': token
+        },
+        data: {
+            username: $('#username').val(),
+            name: $('#name').val(),
+            no_ktp: $('#no_ktp').val(),
+            npwp: $('#npwp').val(),
+            tmp_lahir: $('#tmp_lahir').val(),
+            tgl_lahir: $('#tgl_lahir').val(),
+            gender: $('input[type=radio][name=gender]:checked').val(),
+            enum_religi: $('#enum_religi').val(),
+            enum_edu: $('#enum_edu').val(),
+            enum_prov: $('#enum_prov').val(),
+            enum_city: $('#enum_city').val(),
+            address: $('#address').val(),
+            email: $('#email').val(),
+            phone_number: $('#phone_number').val(),
+
+			company: $('#company').val(),
+			alamat_usaha: $('#alamat_usaha').val(),
+			enum_sektor: $('#enum_sektor').val(),
+			enum_bidang: $('#enum_bidang').val(),
+			tgl_b_us: $('#tgl_b_us').val(),
+			npwp_usaha: $('#npwp_usaha').val(),
+			iumkm: $('#iumkm').val(),
+			kaya_usaha: number($('#kaya_usaha').val()),
+			volume_usaha: number($('#volume_usaha').val()),
+			emp_amount: number($('#emp_amount').val()),
+			capacity: $('#capacity').val(),
+			koperasi: $('#koperasi').val()
+        },
+        success: function(result) {
+        	// console.log(result)
+            if (result.status == true) {
+                $('#warning').hide()
+            	$('#alert').show()
+            	$('html, body').scrollTop(0)
+            	setTimeout(function() {
+            		$('#alert').hide()
+            	}, 3000)
+            } else {
+                if (result.message == 'Username already exists') {
+                    $('#username').addClass('is-invalid')
+                    $('#username').siblings('div').html('Nama akun telah digunakan.')
+                    $('html, body').scrollTop(50)
+                } else if (result.message == 'Email already exists') {
+                    $('#email').addClass('is-invalid')
+                    $('#email').siblings('div').html('Email telah digunakan.')
+                    $('html, body').scrollTop(500)
+                } else if (result.message == 'Username & Email already exists') {
+                    $('#username').addClass('is-invalid')
+                    $('#username').siblings('div').html('Nama akun telah digunakan.')
+                    $('#email').addClass('is-invalid')
+                    $('#email').siblings('div').html('Email telah digunakan.')
+                    $('html, body').scrollTop(50)
+                }
+            }
+        },
+        complete: function() {
+            $('#loading').hide()
+            $('#submit').attr('disabled', false)
+        }
+    })
+})
 
 $('#form-password').submit(function(e) {
     e.preventDefault()
