@@ -1,6 +1,6 @@
 // Agama
 $.ajax({
-    url: api_references + 'get_enum/MeeZae5i',
+    url: `${api_references}get_enum/MeeZae5i`,
     type: 'GET',
     dataType: 'JSON',
     success: function(result) {
@@ -14,7 +14,7 @@ $.ajax({
 
 // Pendidikan
 $.ajax({
-    url: api_references + 'get_enum/ja4oux6I',
+    url: `${api_references}get_enum/ja4oux6I`,
     type: 'GET',
     dataType: 'JSON',
     success: function(result) {
@@ -28,7 +28,7 @@ $.ajax({
 
 // Provinsi
 $.ajax({
-    url: api_references + 'get_provinsi',
+    url: `${api_references}get_provinsi`,
     type: 'GET',
     dataType: 'JSON',
     success: function(result) {
@@ -43,7 +43,7 @@ $.ajax({
 // Kabupaten/Kota
 function get_kota(province, districts) {
     $.ajax({
-        url: api_references + 'get_kota/' + province,
+        url: `${api_references}get_kota/${province}`,
         type: 'GET',
         dataType: 'JSON',
         success: function(result) {
@@ -64,7 +64,7 @@ $('#provinsi_').change(function() {
 
 // Sektor Usaha
 $.ajax({
-    url: api_references + 'get_enum/azoh0Mee',
+    url: `${api_references}get_enum/azoh0Mee`,
     type: 'GET',
     dataType: 'JSON',
     success: function(result) {
@@ -78,7 +78,7 @@ $.ajax({
 
 // Bidang Usaha
 $.ajax({
-    url: api_references + 'get_enum/ve8ooKah',
+    url: `${api_references}get_enum/ve8ooKah`,
     type: 'GET',
     dataType: 'JSON',
     success: function(result) {
@@ -110,62 +110,89 @@ $.ajax({
 let stop = false
 
 $(document).ajaxStop(function() {
-	stop == false ? get_data() : ''
+    stop == false ? get_data() : ''
 })
 
 function get_data() {
-	$.ajax({
-	    url: `${api_kitchensink}namuV3ey/${user_id}`,
-	    type: 'GET',
-	    dataType: 'JSON',
-	    headers: {
-	        'token-id': token,
-	    },
-	    success: function(result) {
-	        // console.log(result)
-	        if (result != '') {
-		        let value = result[0]
-		        // Pengguna
-	            $('#username').val(value.username)
-	            $('#name').val(value.name)
-	            $('#no_ktp').val(value.no_ktp)
-	            $('#npwp').val(value.npwp)
-	            $('#tmp_lahir').val(value.tmp_lahir)
-	            $('#tgl_lahir').val(value.tgl_lahir)
-	            if (value.gender != '') {
-	                if (value.gender == 'L') {
-	                    $('#male').attr('checked', true)
-	                } else {
-	                    $('#female').attr('checked', true)
-	                }
-	            }
-	            $('#religi_').val(value.religi_)
-	            $('#edu_').val(value.edu_)
-	            $('#provinsi_').val(value.provinsi_)
-	            get_kota(value.provinsi_, value.kab_kota_)
-	            $('#address').val(value.address)
-	            $('#email').val(value.email)
-	            $('#phone_number').val(value.phone_number)
+    $.ajax({
+        url: `${api_kitchensink}namuV3ey/${user_id}`,
+        type: 'GET',
+        dataType: 'JSON',
+        headers: {
+            'token-id': token,
+        },
+        success: function(result) {
+            // console.log(result)
+            if (result != '') {
+                let value = result[0]
+                // Pengguna
+                $('#username').val(value.username)
+                $('#name').val(value.name)
+                $('#no_ktp').val(value.no_ktp)
+                $('#npwp').val(value.npwp)
+                $('#tmp_lahir').val(value.tmp_lahir)
+                $('#tgl_lahir').val(value.tgl_lahir)
+                if (value.gender != '') {
+                    if (value.gender == 'L') {
+                        $('#male').attr('checked', true)
+                    } else {
+                        $('#female').attr('checked', true)
+                    }
+                }
+                $('#religi_').val(value.religi_)
+                $('#edu_').val(value.edu_)
+                $('#provinsi_').val(value.provinsi_)
+                get_kota(value.provinsi_, value.kab_kota_)
+                $('#address').val(value.address)
+                $('#email').val(value.email)
+                $('#phone_number').val(value.phone_number)
 
-	            // Usaha
-	            $('#company').val(value.company)
-	            $('#alamat_usaha').val(value.alamat_usaha)
-	            $('#sektor_').val(value.sektor_)
-	            $('#bidang_').val(value.bidang_)
-	            $('#tgl_b_us').val(value.tgl_b_us)
-	            $('#npwp_usaha').val(value.npwp_usaha)
-	            $('#iumkm').val(value.iumkm)
-	            value.kaya_usaha != '0' ? $('#kaya_usaha').val(value.kaya_usaha) : ''
-	            value.volume_usaha != '0' ? $('#volume_usaha').val(value.volume_usaha) : ''
-	            value.emp_amount != '0' ? $('#emp_amount').val(value.emp_amount) : ''
-	            value.capacity != '0' ? $('#capacity').val(value.capacity) : ''
-	            value.koperasi == 'Ya' ? $('#koperasi').val(1) : $('#koperasi').val(0)
-	        } else {
-	        	window.history.back()
-	        }
-	    },
-	    complete: function() {
-	    	stop = true
-	    }
-	})
+                // Usaha
+                $('#company').val(value.company)
+                $('#alamat_usaha').val(value.alamat_usaha)
+                $('#sektor_').val(value.sektor_)
+                $('#bidang_').val(value.bidang_)
+                $('#tgl_b_us').val(value.tgl_b_us)
+                $('#npwp_usaha').val(value.npwp_usaha)
+                $('#iumkm').val(value.iumkm)
+                value.kaya_usaha != '0' ? $('#kaya_usaha').val(value.kaya_usaha) : ''
+                value.volume_usaha != '0' ? $('#volume_usaha').val(value.volume_usaha) : ''
+                value.emp_amount != '0' ? $('#emp_amount').val(value.emp_amount) : ''
+                value.capacity != '0' ? $('#capacity').val(value.capacity) : ''
+                value.koperasi == 'Ya' ? $('#koperasi').val(1) : $('#koperasi').val(0)
+            } else {
+                window.history.back()
+            }
+        },
+        complete: function() {
+            stop = true
+        }
+    })
 }
+
+$('#form-password').submit(function(e) {
+    e.preventDefault()
+    $('#loading-password').show()
+    $('#submit-password').attr('disabled', true)
+    let npassword = $('#npassword').val()
+    $.ajax({
+        url: `${api_kitchensink}namuV3ey/p/${user_id}`,
+        type: 'POST',
+        dataType: 'JSON',
+        headers: {
+            'token-id': token
+        },
+        data: {
+            password: npassword
+        },
+        success: function(result) {
+            $('#loading-password').hide()
+            $('#submit-password').attr('disabled', false)
+            $('#npassword').val('')
+            $('#alert-password').show()
+            setTimeout(function() {
+                $('#alert-password').hide()
+            }, 3000)
+        }
+    })
+})

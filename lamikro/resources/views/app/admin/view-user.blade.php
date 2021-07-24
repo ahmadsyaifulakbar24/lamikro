@@ -248,6 +248,36 @@
 	                            </form>
                             </div>
                         </div>
+						<div class="alert alert-success fade show none" role="alert" id="alert-password">
+							Kata Sandi berhasil diubah.
+						</div>
+                        <div class="grid border">
+                            <div class="grid-body">
+                                <div class="row pb-2">
+                                    <div class="d-none d-md-block col-md-4">
+                                        <div class="font-weight-bold">
+                                            <i class="mdi mdi-key mdi-1x pr-1"></i>
+                                            <span>Ubah Kata Sandi</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                    	<form id="form-password">
+	                                        <div class="form-group position-relative">
+	                                            <label for="npassword" class="text-capitalize">Kata sandi baru</label>
+	                                            <input type="password" class="form-control bg-white" id="npassword" minlength="8" maxlength="32" required>
+	                                            <div class="invalid-feedback" id="npassword-feedback"></div>
+	                                            <i class="password mdi mdi-eye-off" data-id="npassword"></i>
+	                                        </div>
+	                                        <div class="d-flex">
+	                                            <button class="btn btn-sm btn-danger mt-4 ml-auto border-0 font-weight-bold" id="submit-password">
+								        			<i class="mdi mdi-loading mdi-spin pr-2 none" id="loading-password"></i> Ubah Kata Sandi
+								        		</button>
+	                                        </div>
+	                                    </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
