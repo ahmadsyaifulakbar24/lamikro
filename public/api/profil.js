@@ -152,17 +152,17 @@ $('#form').submit(function(e) {
             } else {
                 if (result.message == 'Username already exists') {
                     $('#username').addClass('is-invalid')
-                    $('#username').siblings('div').html('Nama akun telah terpakai.')
+                    $('#username').siblings('div').html('Nama akun telah digunakan.')
                     $('html, body').scrollTop(50)
                 } else if (result.message == 'Email already exists') {
                     $('#email').addClass('is-invalid')
-                    $('#email').siblings('div').html('Email telah terpakai.')
+                    $('#email').siblings('div').html('Email telah digunakan.')
                     $('html, body').scrollTop(500)
                 } else if (result.message == 'Username & Email already exists') {
                     $('#username').addClass('is-invalid')
-                    $('#username').siblings('div').html('Nama akun telah terpakai.')
+                    $('#username').siblings('div').html('Nama akun telah digunakan.')
                     $('#email').addClass('is-invalid')
-                    $('#email').siblings('div').html('Email telah terpakai.')
+                    $('#email').siblings('div').html('Email telah digunakan.')
                     $('html, body').scrollTop(50)
                 }
             }
