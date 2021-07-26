@@ -135,9 +135,9 @@ function get_data() {
             'token-id': token,
         },
         success: function(result) {
-            // console.log(result)
             if (result != '') {
                 let value = result[0]
+	            // console.log(value)
                 $('#username').val(value.username)
                 $('#name').val(value.name)
                 if (value.gender != '') {
@@ -147,22 +147,22 @@ function get_data() {
                         $('#female').attr('checked', true)
                     }
                 }
-                $('#enum_religi').val(value.religi_)
+                $('#enum_religi').val(value.enum_religi)
                 $('#no_ktp').val(value.no_ktp); no_ktp = value.no_ktp
                 $('#npwp').val(value.npwp); npwp = value.npwp
                 $('#tmp_lahir').val(value.tmp_lahir); tmp_lahir = value.tmp_lahir
                 $('#tgl_lahir').val(value.tgl_lahir); tgl_lahir = value.tgl_lahir
-                $('#enum_edu').val(value.edu_)
+                $('#enum_edu').val(value.enum_edu)
                 $('#phone_number').val(value.phone_number); phone_number = value.phone_number
                 $('#email').val(value.email)
                 $('#address').val(value.address); address = value.address
-                $('#enum_prov').val(value.provinsi_)
-                get_kota(value.provinsi_, value.kab_kota_)
+                $('#enum_prov').val(value.enum_prov)
+                get_kota(value.enum_prov, value.enum_city)
 
                 $('#company').val(value.company)
                 $('#alamat_usaha').val(value.alamat_usaha); alamat_usaha = value.alamat_usaha
-                $('#enum_sektor').val(value.sektor_)
-                $('#enum_bidang').val(value.bidang_)
+                $('#enum_sektor').val(value.enum_sektor)
+                $('#enum_bidang').val(value.enum_bidang)
                 $('#tgl_b_us').val(value.tgl_b_us); tgl_b_us = value.tgl_b_us
                 $('#iumkm').val(value.iumkm); iumkm = value.iumkm
                 $('#npwp_usaha').val(value.npwp_usaha); npwp_usaha = value.npwp_usaha
