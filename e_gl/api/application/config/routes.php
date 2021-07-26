@@ -58,6 +58,7 @@ $route['kitchensink/namuV3ey/all'] = 'Admin/get_all';
 $route['kitchensink/namuV3ey/(:any)'] = 'Admin/get_one/$1';
 $route['kitchensink/namuV3ey/u/(:any)'] = 'Admin/update_user/$1';
 $route['kitchensink/namuV3ey/d/(:any)'] = 'Admin/delete_user/$1';
+$route['kitchensink/namuV3ey/p/(:any)'] = 'Admin/update_password/$1';
 
 // DASHBOARD
 $route['_dash/Fe3Peesh'] = 'Dashboard/get_gender';
