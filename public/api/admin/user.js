@@ -122,7 +122,7 @@ $('#delete').click(function() {
     let id = $(this).attr('data-id')
     $(this).attr('disabled', true)
     $.ajax({
-        url: `${api_kitchensink}user/d/${id}`,
+        url: `${api_kitchensink}namuV3ey/d/${id}`,
         type: 'POST',
         dataType: 'JSON',
         headers: {
