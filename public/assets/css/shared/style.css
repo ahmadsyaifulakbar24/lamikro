@@ -1367,7 +1367,7 @@ pre {
     border: 0; }
   .form-control:focus {
     color: #495057;
-    background-color: #f8f9fb;
+    /*background-color: #f8f9fb;*/
     border-color: #2d3436;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
@@ -1380,7 +1380,7 @@ pre {
   .form-control::placeholder {
     color: #6c757d;
     opacity: 1; }
-  .form-control:disabled, .form-control[readonly] {
+  .form-control:disabled {
     background-color: #f8f9fa;
     opacity: 1; }
 
@@ -2792,8 +2792,8 @@ input[type="button"].btn-block {
     padding-right: 0.75rem;
     background-image: none; }
   .custom-select:disabled {
-    color: #6c757d;
-    background-color: #e9ecef; }
+    color: #000;
+    background-color: #f8f9fa; }
   .custom-select::-ms-expand {
     display: none; }
 
@@ -8950,7 +8950,8 @@ textarea {
 .form-control {
   padding-left: 20px;
   padding-right: 20px;
-  color: rgba(16, 16, 16, 0.8); }
+  color: rgba(16, 16, 16, 0.8);
+  background-color: #fff; }
   .form-control.placeholder {
     font-weight: inherit;
     color: inherit;
@@ -9003,7 +9004,7 @@ textarea {
 
 .custom-select,
 .custom-select[multiple] {
-  background: #f8f9fb;
+  /*background: #f8f9fb;*/
   border-color: #d6e0ea;
   color: rgba(16, 16, 16, 0.8); }
   .custom-select option,
