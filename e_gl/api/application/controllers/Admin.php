@@ -119,7 +119,14 @@ class Admin extends CI_Controller {
 						'capacity' => $item['capacity'] == null ? '' : $item['capacity'],
 						'koperasi' => $item['koperasi'] == null ? '' : $item['koperasi'] == 1 ? 'Ya' : 'Tidak',
 						'latitude' => $item['latitude'] == null ? '' : $item['latitude'],
-						'longitude' => $item['longitude'] == null ? '' : $item['longitude']
+						'longitude' => $item['longitude'] == null ? '' : $item['longitude'],
+
+						'enum_religi' => $item['enum_religi'] == null ? '' : $item['enum_religi'],
+						'enum_edu' => $item['enum_edu'] == null ? '' : $item['enum_edu'],
+						'enum_prov' => $item['enum_prov'] == null ? '' : $item['enum_prov'],
+						'enum_city' => $item['enum_city'] == null ? '' : $item['enum_city'],
+						'enum_sektor' => $item['enum_sektor'] == null ? '' : $item['enum_sektor'],
+						'enum_bidang' => $item['enum_sektor'] == null ? '' : $item['enum_bidang']
 					));
 				}
 				echo json_encode($getDataArr);
