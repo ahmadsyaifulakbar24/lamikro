@@ -13,12 +13,13 @@ class Admin extends CI_Controller {
 				$limit = projectbase_post('limitPage');
 				$page = (projectbase_post('page')-1)*$limit;
 				if(projectbase_post('query') !=''){
-					$dataUser = projectbase_query_block("select * from _report_user order by id desc LIMIT ".$page.",".$limit);
+					$dataUser = projectbase_query_block("select * from _report_user where username like '%".projectbase_post('query')."%' or name like '%".projectbase_post('query')."%' or no_ktp like '%".projectbase_post('query')."%' order by id desc LIMIT ".$page.",".$limit);
 				}else{
 					$dataUser = projectbase_query_block("select * from _report_user order by id desc LIMIT ".$page.",".$limit);
 				}
 				foreach($dataUser->result_array() as $item){
-					$idd = urlencode(xor_this($item['id']));
+					$idd = $item['id'];
+					// $idd = urlencode(xor_this($item['id']));
 					array_push($dataUserArr,array(
 						'_id' => $idd,
 						// 'id_balik' => xor_this(urldecode($idd)),
@@ -53,7 +54,14 @@ class Admin extends CI_Controller {
 						'capacity' => $item['capacity'] == null ? '' : $item['capacity'],
 						'koperasi' => $item['koperasi'] == null ? '' : $item['koperasi'] == 1 ? 'Ya' : 'Tidak',
 						'latitude' => $item['latitude'] == null ? '' : $item['latitude'],
-						'longitude' => $item['longitude'] == null ? '' : $item['longitude']
+						'longitude' => $item['longitude'] == null ? '' : $item['longitude'],
+
+						'enum_religi' => $item['enum_religi'] == null ? '' : $item['enum_religi'],
+						'enum_edu' => $item['enum_edu'] == null ? '' : $item['enum_edu'],
+						'enum_prov' => $item['enum_prov'] == null ? '' : $item['enum_prov'],
+						'enum_city' => $item['enum_city'] == null ? '' : $item['enum_city'],
+						'enum_sektor' => $item['enum_sektor'] == null ? '' : $item['enum_sektor'],
+						'enum_bidang' => $item['enum_sektor'] == null ? '' : $item['enum_bidang']
 					));
 				}
 				echo json_encode(array('success'=>true,'message_data'=>'Loaded data','results'=>count($dataUserArr),'data'=>$dataUserArr));
@@ -74,9 +82,11 @@ class Admin extends CI_Controller {
 			if($data != ''){
 				$getDataArr = array();
 				$result = json_decode($data, true);
-				$getData = projectbase_jarvis_get_data('username','_report_user','id','asc','',array('id'=>xor_this(urldecode($id))));
+				$getData = projectbase_jarvis_get_data('username','_report_user','id','asc','',array('id'=>$id));
+				// $getData = projectbase_jarvis_get_data('username','_report_user','id','asc','',array('id'=>xor_this(urldecode($id))));
 				foreach($getData['data'] as $item){ 
-					$idd = urlencode(xor_this($item['id']));
+					// $idd = urlencode(xor_this($item['id']));
+					$idd = $item['id'];
 					array_push($getDataArr,array(
 						'_id' => $idd,
 						// PROFIL PENGGUNA
@@ -126,35 +136,36 @@ class Admin extends CI_Controller {
 		header("Access-Control-Allow-Methods: *");
 		$headers = apache_request_headers();
 		if(isset($headers['token-id'])){
-			$idd = xor_this(urldecode($id));
+			$idd = $id;
+			// $idd = xor_this(urldecode($id));
 			$data = get_redis($headers['token-id']);
 			if($data != ''){
 				$result = json_decode($data, true);
-				$isUniqueUsername = false;
-				$isUniqueEmail = false;
+				// $isUniqueUsername = false;
+				// $isUniqueEmail = false;
 				
-				$getUsername = projectbase_jarvis_get_data('username','jarvis_user','id','asc','',array('username'=>projectbase_post('username')));
-				if($getUsername['results'] != 0){
-					$isUniqueUsername = true;
-				}
+				// $getUsername = projectbase_jarvis_get_data('username','jarvis_user','id','asc','',array('username'=>projectbase_post('username')));
+				// if($getUsername['results'] != 0){
+				// 	$isUniqueUsername = true;
+				// }
 				
-				$getEmail = projectbase_jarvis_get_data('email','jarvis_user','id','asc','',array('email'=>projectbase_post('email')));
-				if($getEmail['results'] != 0){
-					$isUniqueEmail = true;
-				}
+				// $getEmail = projectbase_jarvis_get_data('email','jarvis_user','id','asc','',array('email'=>projectbase_post('email')));
+				// if($getEmail['results'] != 0){
+				// 	$isUniqueEmail = true;
+				// }
 				
-				if($isUniqueUsername == true && $isUniqueEmail == true){
-					echo json_encode(array('status'=>false,'message'=>'Username & Email already exists'));
-				}else if($isUniqueUsername == true && $isUniqueEmail == false){
-					echo json_encode(array('status'=>false,'message'=>'Username already exists'));
-				}else if($isUniqueEmail == true && $isUniqueUsername == false){
-					echo json_encode(array('status'=>false,'message'=>'Email already exists'));
-				}else{
+				// if($isUniqueUsername == true && $isUniqueEmail == true){
+				// 	echo json_encode(array('status'=>false,'message'=>'Username & Email already exists'));
+				// }else if($isUniqueUsername == true && $isUniqueEmail == false){
+				// 	echo json_encode(array('status'=>false,'message'=>'Username already exists'));
+				// }else if($isUniqueEmail == true && $isUniqueUsername == false){
+				// 	echo json_encode(array('status'=>false,'message'=>'Email already exists'));
+				// }else{
 					$data_update = array(
-						'username'=>projectbase_post('username'),
+						// 'username'=>projectbase_post('username'),
 						'company'=>projectbase_post('company'),
 						'name'=>projectbase_post('name'),
-						'email'=>projectbase_post('email'),
+						// 'email'=>projectbase_post('email'),
 						'phone_number'=>projectbase_post('phone_number'),
 						'address'=>projectbase_post('address'),
 						'npwp'=>projectbase_post('npwp'),
@@ -184,7 +195,31 @@ class Admin extends CI_Controller {
 					$data_update['koperasi'] = projectbase_post('koperasi');				
 					projectbase_process_block('UPDATE','jarvis_user',$data_update,$result['userdata']['id'],'id',$idd);
 					echo json_encode(array('status'=>true,'message'=>'Data updated'));
-				}				
+				// }				
+			}else{
+				echo json_encode(array('status'=>false,'message'=>'Token expired'));
+			}
+		}else{
+			echo json_encode(array('status'=>false,'message'=>'Invalid token'));
+		}
+	}
+	function update_password($id){
+		header("Access-Control-Allow-Origin: *");
+		header("Access-Control-Allow-Headers: *");
+		header("Access-Control-Allow-Methods: *");
+		$headers = apache_request_headers();
+		if(isset($headers['token-id'])){
+			$idd = $id;
+			// $idd = xor_this(urldecode($id));
+			$data = get_redis($headers['token-id']);
+			if($data != ''){
+				$result = json_decode($data, true);
+				$password = md5(projectbase_post('password'));
+				$data_update = array(
+					'password'=>$password
+				);					
+				projectbase_process_block('UPDATE','jarvis_user',$data_update,$result['userdata']['id'],'id',$idd);
+				echo json_encode(array('status'=>true,'message'=>'Data updated'));
 			}else{
 				echo json_encode(array('status'=>false,'message'=>'Token expired'));
 			}
@@ -198,7 +233,8 @@ class Admin extends CI_Controller {
 		header("Access-Control-Allow-Methods: *");
 		$headers = apache_request_headers();
 		if(isset($headers['token-id'])){
-			$idd = xor_this(urldecode($id));
+			$idd = $id;
+			// $idd = xor_this(urldecode($id));
 			$data = get_redis($headers['token-id']);
 			if($data != ''){
 				$result = json_decode($data, true);
