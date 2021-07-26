@@ -54,41 +54,41 @@
                                     	<form id="form">
 	                                        <div class="form-group">
 	                                            <label for="company">Nama Usaha</label>
-	                                            <input type="text" class="form-control bg-white" id="company" required>
+	                                            <input type="text" class="form-control" id="company" required>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="alamat_usaha">Alamat Usaha</label>
-	                                            <textarea rows="4" class="form-control bg-white" id="alamat_usaha" required></textarea>
+	                                            <textarea rows="4" class="form-control" id="alamat_usaha" required></textarea>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="enum_sektor">Sektor Usaha</label>
-	                                            <select class="custom-select bg-white pointer" id="enum_sektor" required>
+	                                            <select class="custom-select pointer" id="enum_sektor" required>
 	                                            	<option value="" disabled selected>Pilih</option>
 	                                            </select>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="enum_bidang">Bidang Usaha</label>
-	                                            <select class="custom-select bg-white pointer" id="enum_bidang" required>
+	                                            <select class="custom-select pointer" id="enum_bidang" required>
 	                                            	<option value="" disabled selected>Pilih</option>
 	                                            </select>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="tgl_b_us">Tanggal Pendirian Usaha</label>
-	                                            <input type="date" class="form-control bg-white" id="tgl_b_us" start="2020" required>
+	                                            <input type="date" class="form-control" id="tgl_b_us" start="2020" required>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="iumkm">Nomor IUMK atau NIB (Nomor Induk Berusaha)</label>
-	                                            <input type="text" class="form-control bg-white" id="iumkm" required>
+	                                            <input type="text" class="form-control" id="iumkm" required>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="npwp_usaha">NPWP Usaha</label>
-	                                            <input type="tel" class="form-control bg-white npwp" id="npwp_usaha" maxlength="20" required>
+	                                            <input type="tel" class="form-control npwp" id="npwp_usaha" maxlength="20" required>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
@@ -123,12 +123,12 @@
 											</div>
 	                                        <div class="form-group">
 	                                            <label for="capacity">Kapasitas Produksi per Tahun</label>
-	                                            <input type="text" class="form-control bg-white" id="capacity" required>
+	                                            <input type="text" class="form-control" id="capacity" required>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="koperasi">Anggota Koperasi</label>
-	                                            <select class="custom-select bg-white pointer" id="koperasi" required>
+	                                            <select class="custom-select pointer" id="koperasi" required>
 	                                            	<option value="" disabled selected>Pilih</option>
 	                                            	<option value="1">Ya</option>
 	                                            	<option value="0">Tidak</option>

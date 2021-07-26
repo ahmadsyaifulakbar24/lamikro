@@ -31,7 +31,7 @@
 	                                    <div class="col-md-8">
 	                                        <div class="form-group">
 	                                            <label for="username">Nama Akun</label>
-	                                            <input type="text" class="form-control bg-white" id="username" required>
+	                                            <input type="text" class="form-control" id="username" disabled>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                    </div>
@@ -46,7 +46,7 @@
 	                                    <div class="col-md-8">
 	                                        <div class="form-group">
 	                                            <label for="name">Nama Lengkap</label>
-	                                            <input type="text" class="form-control bg-white" id="name" required>
+	                                            <input type="text" class="form-control" id="name" required>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
@@ -63,65 +63,65 @@
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="enum_religi">Agama</label>
-	                                            <select class="custom-select bg-white pointer" id="enum_religi" required>
+	                                            <select class="custom-select pointer" id="enum_religi" required>
 	                                            	<option value="" disabled selected>Pilih</option>
 	                                            </select>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="no_ktp">Nomor Induk Kependudukan (NIK)</label>
-	                                            <input type="tel" class="form-control bg-white" id="no_ktp" maxlength="16" required>
+	                                            <input type="tel" class="form-control" id="no_ktp" maxlength="16" disabled>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="npwp">NPWP Pribadi</label>
-	                                            <input type="tel" class="form-control bg-white npwp" id="npwp" maxlength="20" required>
+	                                            <input type="tel" class="form-control npwp" id="npwp" maxlength="20" disabled>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-row">
 	                                            <div class="col-sm-6 form-group">
 	                                                <label for="tmp_lahir">Tempat Lahir</label>
-	                                                <input type="text" class="form-control bg-white" id="tmp_lahir" required>
+	                                                <input type="text" class="form-control" id="tmp_lahir" disabled>
 	                                                <div class="invalid-feedback"></div>
 	                                            </div>
 	                                            <div class="col-sm-6 form-group">
 	                                                <label for="tgl_lahir">Tanggal Lahir</label>
-	                                                <input type="date" class="form-control bg-white" id="tgl_lahir" required>
+	                                                <input type="date" class="form-control" id="tgl_lahir" disabled>
 	                                                <div class="invalid-feedback"></div>
 	                                            </div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="enum_edu">Pendidikan Terakhir</label>
-	                                            <select class="custom-select bg-white pointer" id="enum_edu" required>
+	                                            <select class="custom-select pointer" id="enum_edu" required>
 	                                            	<option value="" disabled selected>Pilih</option>
 	                                            </select>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="phone_number">Nomor Telepon</label>
-	                                            <input type="tel" class="form-control bg-white" id="phone_number" required>
+	                                            <input type="tel" class="form-control" id="phone_number" disabled>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="email">Email</label>
-	                                            <input type="email" class="form-control bg-white" id="email" required>
+	                                            <input type="email" class="form-control" id="email" disabled>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="address">Alamat Rumah</label>
-	                                            <textarea rows="4" class="form-control bg-white" id="address" required></textarea>
+	                                            <textarea rows="4" class="form-control" id="address" disabled></textarea>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="enum_prov">Provinsi</label>
-	                                            <select class="custom-select bg-white pointer" id="enum_prov" required>
+	                                            <select class="custom-select pointer" id="enum_prov" required>
 	                                            	<option value="" disabled selected>Pilih</option>
 	                                            </select>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label for="enum_city">Kabupaten/Kota</label>
-	                                            <select class="custom-select bg-white pointer" id="enum_city" required>
+	                                            <select class="custom-select pointer" id="enum_city" required>
 	                                            	<option value="" disabled selected>Pilih</option>
 	                                            </select>
 	                                            <div class="invalid-feedback"></div>
@@ -156,41 +156,41 @@
 	                                    	<form id="form">
 		                                        <div class="form-group">
 		                                            <label for="company">Nama Usaha</label>
-		                                            <input type="text" class="form-control bg-white" id="company" required>
+		                                            <input type="text" class="form-control" id="company" required>
 		                                            <div class="invalid-feedback"></div>
 		                                        </div>
 		                                        <div class="form-group">
 		                                            <label for="alamat_usaha">Alamat Usaha</label>
-		                                            <textarea rows="4" class="form-control bg-white" id="alamat_usaha" required></textarea>
+		                                            <textarea rows="4" class="form-control" id="alamat_usaha" disabled></textarea>
 		                                            <div class="invalid-feedback"></div>
 		                                        </div>
 		                                        <div class="form-group">
 		                                            <label for="enum_sektor">Sektor Usaha</label>
-		                                            <select class="custom-select bg-white pointer" id="enum_sektor" required>
+		                                            <select class="custom-select pointer" id="enum_sektor" required>
 		                                            	<option value="" disabled selected>Pilih</option>
 		                                            </select>
 		                                            <div class="invalid-feedback"></div>
 		                                        </div>
 		                                        <div class="form-group">
 		                                            <label for="enum_bidang">Bidang Usaha</label>
-		                                            <select class="custom-select bg-white pointer" id="enum_bidang" required>
+		                                            <select class="custom-select pointer" id="enum_bidang" required>
 		                                            	<option value="" disabled selected>Pilih</option>
 		                                            </select>
 		                                            <div class="invalid-feedback"></div>
 		                                        </div>
 		                                        <div class="form-group">
 		                                            <label for="tgl_b_us">Tanggal Pendirian Usaha</label>
-		                                            <input type="date" class="form-control bg-white" id="tgl_b_us" start="2020" required>
+		                                            <input type="date" class="form-control" id="tgl_b_us" start="2020" disabled>
 		                                            <div class="invalid-feedback"></div>
 		                                        </div>
 		                                        <div class="form-group">
 		                                            <label for="iumkm">Nomor IUMK atau NIB (Nomor Induk Berusaha)</label>
-		                                            <input type="text" class="form-control bg-white" id="iumkm" required>
+		                                            <input type="text" class="form-control" id="iumkm" disabled>
 		                                            <div class="invalid-feedback"></div>
 		                                        </div>
 		                                        <div class="form-group">
 		                                            <label for="npwp_usaha">NPWP Usaha</label>
-		                                            <input type="tel" class="form-control bg-white npwp" id="npwp_usaha" maxlength="20" required>
+		                                            <input type="tel" class="form-control npwp" id="npwp_usaha" maxlength="20" disabled>
 		                                            <div class="invalid-feedback"></div>
 		                                        </div>
 		                                        <div class="form-group">
@@ -216,7 +216,7 @@
 		                                        <div class="form-group">
 		                                            <label for="emp_amount">Jumlah Karyawan</label>
 			                                        <div class="input-group mb-3">
-														<input type="tel" class="form-control number" id="emp_amount" required>
+														<input type="tel" class="form-control number" id="emp_amount" disabled>
 														<div class="input-group-append">
 															<span class="input-group-text"><small>Orang</small></span>
 														</div>
@@ -225,12 +225,12 @@
 												</div>
 		                                        <div class="form-group">
 		                                            <label for="capacity">Kapasitas Produksi per Tahun</label>
-		                                            <input type="text" class="form-control bg-white" id="capacity" required>
+		                                            <input type="text" class="form-control" id="capacity" required>
 		                                            <div class="invalid-feedback"></div>
 		                                        </div>
 		                                        <div class="form-group">
 		                                            <label for="koperasi">Anggota Koperasi</label>
-		                                            <select class="custom-select bg-white pointer" id="koperasi" required>
+		                                            <select class="custom-select pointer" id="koperasi" disabled>
 		                                            	<option value="" disabled selected>Pilih</option>
 		                                            	<option value="1">Ya</option>
 		                                            	<option value="0">Tidak</option>
@@ -264,7 +264,7 @@
                                     	<form id="form-password">
 	                                        <div class="form-group position-relative">
 	                                            <label for="npassword" class="text-capitalize">Kata sandi baru</label>
-	                                            <input type="password" class="form-control bg-white" id="npassword" minlength="8" maxlength="32" required>
+	                                            <input type="password" class="form-control" id="npassword" minlength="8" maxlength="32" required>
 	                                            <div class="invalid-feedback" id="npassword-feedback"></div>
 	                                            <i class="password mdi mdi-eye-off" data-id="npassword"></i>
 	                                        </div>
