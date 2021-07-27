@@ -19,10 +19,10 @@
 							</ul>
 						</div>
 						<div class="alert alert-warning fade show none" role="alert" id="warning">
-							<i class="mdi mdi-alert-circle-outline pr-2"></i> Harap lengkapi profil usaha.
+							<i class="mdi mdi-alert-circle-outline pr-2"></i>Harap lengkapi profil usaha sebelum menggunakan aplikasi Lamikro.
 						</div>
 						<div class="alert alert-success fade show none" role="alert" id="alert">
-							<i class="mdi mdi-check-circle-outline pr-2"></i> Profil usaha berhasil disimpan.
+							<i class="mdi mdi-check-circle-outline pr-2"></i>Profil usaha berhasil disimpan.
 						</div>
                         <div class="grid border">
                             <div class="grid-body">

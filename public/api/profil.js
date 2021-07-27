@@ -62,6 +62,7 @@ $('#enum_prov').change(function() {
     get_kota($(this).val())
 })
 
+let profil_usaha = false
 $.ajax({
     url: api_url + 'metadata/userdata',
     type: 'GET',
@@ -91,6 +92,9 @@ $.ajax({
         }
         if (result.tmp_lahir == '' || result.enum_religi == null || result.enum_edu == null || result.enum_prov == null || result.enum_city == null) {
             $('#warning').show()
+        }
+        if (result.enum_sektor == null || result.enum_bidang == null || result.tgl_b_us == '0000-00-00' || result.npwp_usaha == '') {
+            profil_usaha = true
         }
         $('#submit').attr('disabled', false)
     }
@@ -148,6 +152,9 @@ $('#form').submit(function(e) {
             	$('html, body').scrollTop(0)
             	setTimeout(function() {
             		$('#alert').hide()
+	            	if (profil_usaha == true) {
+	            		location.href = root + 'app/profil-usaha'
+	            	}
             	}, 3000)
             } else {
                 if (result.message == 'Username already exists') {
