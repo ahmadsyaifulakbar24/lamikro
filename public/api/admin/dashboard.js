@@ -11,8 +11,12 @@ $.ajax({
         let labels = ['Tidak diketahui', 'Laki-Laki', 'Perempuan']
         let data = []
         $.each(result.data, function(index, value) {
-            data.push(value.value)
-            append = `<small>${labels[index]}: <b>${convertToNumber(value.value.toString())}</b></small>`
+            data.push(convertToNumber(value.value.toString()))
+            append = `<tr>
+            	<td>${labels[index]}</td>
+            	<td class="px-2">:</td>
+            	<td><b>${convertToNumber(value.value.toString())}</b></td>
+            </tr>`
             $('#gender').append(append)
         })
         var ctx = document.getElementById('chartGender').getContext('2d')
@@ -49,8 +53,12 @@ $.ajax({
         let data = []
         $.each(result.data, function(index, value) {
             labels.push(value.id)
-            data.push(value.value)
-            append = `<small>${labels[index]}: <b>${convertToNumber(value.value.toString())}</b></small>`
+            data.push(convertToNumber(value.value.toString()))
+            append = `<tr>
+            	<td>${labels[index]}</td>
+            	<td class="px-2">:</td>
+            	<td><b>${convertToNumber(value.value.toString())}</b></td>
+        	</tr>`
             $('#religion').append(append)
         })
         var ctx = document.getElementById('chartReligion').getContext('2d')
@@ -99,8 +107,12 @@ $.ajax({
         let data = []
         $.each(result.data, function(index, value) {
             labels.push(value.id)
-            data.push(value.value)
-            append = `<small>${labels[index]}: <b>${convertToNumber(value.value.toString())}</b></small>`
+            data.push(convertToNumber(value.value.toString()))
+            append = `<tr>
+            	<td>${labels[index]}</td>
+            	<td class="px-2">:</td>
+            	<td><b>${convertToNumber(value.value.toString())}</b></td>
+        	</tr>`
             $('#education').append(append)
         })
         var ctx = document.getElementById('chartEducation').getContext('2d')
@@ -152,11 +164,15 @@ $.ajax({
         let data = []
         $.each(result.data, function(key, value) {
             if (key != 'TOTAL') {
-            	data.push(value)
-	            append = `<small>${labels[index]}: <b>${convertToNumber(value.toString())}</b></small>`
-	            $('#iumk').append(append)
-	            index++
-	        }
+                data.push(convertToNumber(value.toString()))
+                append = `<tr>
+                	<td>${labels[index]}</td>
+                	<td class="px-2">:</td>
+                	<td><b>${convertToNumber(value.toString())}</b></td>
+            	</tr>`
+                $('#iumk').append(append)
+                index++
+            }
         })
         var ctx = document.getElementById('chartIUMK').getContext('2d')
         var chart = new Chart(ctx, {
@@ -192,11 +208,15 @@ $.ajax({
         let data = []
         $.each(result.data, function(key, value) {
             if (key != 'TOTAL') {
-            	data.push(value)
-	            append = `<small>${labels[index]}: <b>${convertToNumber(value.toString())}</b></small>`
-	            $('#npwp').append(append)
-	            index++
-	        }
+                data.push(convertToNumber(value.toString()))
+                append = `<tr>
+                	<td>${labels[index]}</td>
+                	<td class="px-2">:</td>
+                	<td><b>${convertToNumber(value.toString())}</b></td>
+            	</tr>`
+                $('#npwp').append(append)
+                index++
+            }
         })
         var ctx = document.getElementById('chartNPWP').getContext('2d')
         var chart = new Chart(ctx, {
@@ -232,11 +252,15 @@ $.ajax({
         let data = []
         $.each(result.data, function(key, value) {
             if (key != 'TOTAL') {
-            	data.push(value)
-	            append = `<small>${labels[index]}: <b>${convertToNumber(value.toString())}</b></small>`
-	            $('#koperasi').append(append)
-	            index++
-	        }
+                data.push(convertToNumber(value.toString()))
+                append = `<tr>
+                	<td>${labels[index]}</td>
+                	<td class="px-2">:</td>
+                	<td><b>${convertToNumber(value.toString())}</b></td>
+            	</tr>`
+                $('#koperasi').append(append)
+                index++
+            }
         })
         var ctx = document.getElementById('chartKoperasi').getContext('2d')
         var chart = new Chart(ctx, {
@@ -266,14 +290,18 @@ $.ajax({
         'token-id': token
     },
     success: function(result) {
-    	// console.log(result)
+        // console.log(result)
         let labels = ['< 1 Miliar', '1 Miliar - 5 Miliar', '5 Miliar - 10 Miliar']
         let data = []
-        data.push(result.data.MIKRO)
-        data.push(result.data.KECIL)
-        data.push(result.data.MENENGAH)
+        data.push(convertToNumber(result.data.MIKRO.toString()))
+        data.push(convertToNumber(result.data.KECIL.toString()))
+        data.push(convertToNumber(result.data.MENENGAH.toString()))
         for (let index = 0; index < 3; index++) {
-            append = `<small>${labels[index]}: <b>${convertToNumber(data[index].toString())}</b></small>`
+            append = `<tr>
+            	<td>${labels[index]}</td>
+            	<td class="px-2">:</td>
+            	<td><b>${convertToNumber(data[index].toString())}</b></td>
+        	</tr>`
             $('#asset').append(append)
         }
         var ctx = document.getElementById('chartAsset').getContext('2d')

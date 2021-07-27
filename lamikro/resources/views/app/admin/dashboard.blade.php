@@ -15,51 +15,51 @@
 	                    <div class="row">
 	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-4">
 	                    		<div class="grid border p-4" style="height:100%">
-				                    <h6 class="font-weight-bold pb-3">Total Berdasarkan Jenis Kelamin</h6>
+				                    <h6 class="font-weight-bold pb-3">Berdasarkan Jenis Kelamin</h6>
 									<canvas id="chartGender"></canvas>
-									<div class="d-flex flex-column" id="gender"></div>
+									<table id="gender"></table>
 								</div>
 	                    	</div>
 	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-4">
 	                    		<div class="grid border p-4" style="height:100%">
-				                    <h6 class="font-weight-bold pb-3">Total Berdasarkan Agama</h6>
+				                    <h6 class="font-weight-bold pb-3">Berdasarkan Agama</h6>
 									<canvas id="chartReligion"></canvas>
-									<div class="d-flex flex-column" id="religion"></div>
+									<table id="religion"></table>
 								</div>
 	                    	</div>
 	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-4">
 	                    		<div class="grid border p-4" style="height:100%">
-				                    <h6 class="font-weight-bold pb-3">Total Berdasarkan Pendidikan</h6>
+				                    <h6 class="font-weight-bold pb-3">Berdasarkan Pendidikan</h6>
 									<canvas id="chartEducation"></canvas>
-									<div class="d-flex flex-column" id="education"></div>
+									<table id="education"></table>
 								</div>
 	                    	</div>
 	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-4">
 	                    		<div class="grid border p-4" style="height:100%">
-				                    <h6 class="font-weight-bold pb-3">Total Berdasarkan Kepemilikan IUMK atau NIB</h6>
+				                    <h6 class="font-weight-bold pb-3">Berdasarkan Kepemilikan IUMK atau NIB</h6>
 									<canvas id="chartIUMK"></canvas>
-									<div class="d-flex flex-column" id="iumk"></div>
+									<table id="iumk"></table>
 								</div>
 	                    	</div>
 	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-4">
 	                    		<div class="grid border p-4" style="height:100%">
-				                    <h6 class="font-weight-bold pb-3">Total Berdasarkan Kepemilikan NPWP Usaha</h6>
+				                    <h6 class="font-weight-bold pb-3">Berdasarkan Kepemilikan NPWP Usaha</h6>
 									<canvas id="chartNPWP"></canvas>
-									<div class="d-flex flex-column" id="npwp"></div>
+									<table id="npwp"></table>
 								</div>
 	                    	</div>
 	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-4">
 	                    		<div class="grid border p-4" style="height:100%">
-				                    <h6 class="font-weight-bold pb-3">Total Berdasarkan Keanggotaan Koperasi</h6>
+				                    <h6 class="font-weight-bold pb-3">Berdasarkan Keanggotaan Koperasi</h6>
 									<canvas id="chartKoperasi"></canvas>
-									<div class="d-flex flex-column" id="koperasi"></div>
+									<table id="koperasi"></table>
 								</div>
 	                    	</div>
 	                    	<div class="col-12 mb-4">
 	                    		<div class="grid border p-4" style="height:100%">
-				                    <h6 class="font-weight-bold pb-3">Total Berdasarkan Kekayaan Usaha (Asset) per Tahun</h6>
+				                    <h6 class="font-weight-bold pb-3">Berdasarkan Kekayaan Usaha (Asset) per Tahun</h6>
 									<canvas id="chartAsset"></canvas>
-									<div class="d-flex flex-column" id="asset"></div>
+									<table id="asset"></table>
 								</div>
 	                    	</div>
 	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-5">
@@ -70,7 +70,7 @@
 		                                        <thead>
 		                                            <tr>
 		                                                <th colspan="2">
-										                    <h6 class="font-weight-bold py-3">Total Berdasarkan Provinsi</h6>
+										                    <h6 class="font-weight-bold py-3">Berdasarkan Provinsi</h6>
 										                </th>
 		                                            </tr>
 		                                            <tr>
@@ -99,7 +99,7 @@
 		                                        <thead>
 		                                            <tr>
 		                                                <th colspan="2">
-										                    <h6 class="font-weight-bold py-3">Total Berdasarkan Bidang Usaha</h6>
+										                    <h6 class="font-weight-bold py-3">Berdasarkan Bidang Usaha</h6>
 										                </th>
 		                                            </tr>
 		                                            <tr>
