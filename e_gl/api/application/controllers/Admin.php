@@ -13,7 +13,7 @@ class Admin extends CI_Controller {
 				$limit = projectbase_post('limitPage');
 				$page = (projectbase_post('page')-1)*$limit;
 				if(projectbase_post('query') !=''){
-					$dataUser = projectbase_query_block("select * from _report_user where username like '%".projectbase_post('query')."%' or name like '%".projectbase_post('query')."%' or no_ktp like '%".projectbase_post('query')."%' order by id desc LIMIT ".$page.",".$limit);
+					$dataUser = projectbase_query_block("select * from _report_user where username like '%".projectbase_post('query')."%' or name like '%".projectbase_post('query')."%' or email like '%".projectbase_post('query')."%' or company like'%".projectbase_post('query')."%' order by id desc LIMIT ".$page.",".$limit);
 				}else{
 					$dataUser = projectbase_query_block("select * from _report_user order by id desc LIMIT ".$page.",".$limit);
 				}
