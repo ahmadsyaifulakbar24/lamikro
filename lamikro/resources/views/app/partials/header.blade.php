@@ -41,6 +41,7 @@
                                 </div>
                                 @endif
                                 <div class="dropdown-body border-top py-2">
+                                	@if (session('role') != 'J1')
                                     <a class="dropdown-list border-0 py-1" href="{{url('app/pengaturan')}}">
                                         <div class="image-wrapper">
                                             <i class="mdi mdi-settings-outline mdi-2x"></i>
@@ -49,6 +50,7 @@
                                             <small class="name pl-2">Pengaturan</small>
                                         </div>
                                     </a>
+                                    @endif
                                     <a class="dropdown-list text-danger py-1" href="javascript:void(0)" id="logout">
                                         <div class="image-wrapper">
                                             <i class="mdi mdi-exit-to-app mdi-2x"></i>
