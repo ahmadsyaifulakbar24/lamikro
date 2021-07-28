@@ -19,7 +19,7 @@
 	                                    <small class="font-weight-500 py-2">Cari Pengguna:</small>
 	                                </div>
 	                                <div class="col">
-	                                    <input type="text" id="search" class="form-control bg-white" autocomplete="off" placeholder="Nama Lengkap/Nomor KTP/Nama Akun">
+	                                    <input type="text" id="search" class="form-control bg-white" autocomplete="off" placeholder="Nama Lengkap/Email/Nama Akun/Nama Usaha">
 	                                </div>
 	                            </div>
 	                        </form>
