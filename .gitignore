@@ -2,3 +2,5 @@ bekas/
 old/
 index22.html
 e_gl/api/application/cache/
+lamikro/resources/views/app/partials/footer.blade.php
+.DS_Store
