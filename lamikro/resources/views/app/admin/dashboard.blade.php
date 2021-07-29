@@ -29,7 +29,7 @@
 	                    	</div>
 	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-4">
 	                    		<div class="grid border p-4" style="height:100%">
-				                    <h6 class="font-weight-bold pb-3">Berdasarkan Pendidikan</h6>
+				                    <h6 class="font-weight-bold pb-3">Berdasarkan Pendidikan Terakhir</h6>
 									<canvas id="chartEducation"></canvas>
 									<table id="education"></table>
 								</div>
