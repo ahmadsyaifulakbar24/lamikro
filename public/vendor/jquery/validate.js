@@ -1,8 +1,3 @@
-function formatNPWP(value) {
-		if (typeof value === 'string') {
-			return value.replace(/(\d{2})(\d{3})(\d{3})(\d{1})(\d{3})(\d{3})/, '$1.$2.$3.$4-$5.$6');
-		}
-	}
 function validateName() {
 	let name = $('#name').val()
 	window.sname = false
@@ -85,11 +80,11 @@ function validateKTP() {
 	window.sktp = false
 	if(ktp == '' || ktp == null) {
 		$('#ktp').addClass('is-invalid')
-		$('#ktp-feedback').html('Masukkan nomor KTP.')
+		$('#ktp-feedback').html('Masukkan NIK.')
 	}
 	else if (!/^[0-9]*$/g.test(ktp)) {
 		$('#ktp').addClass('is-invalid')
-		$('#ktp-feedback').html('Masukkan nomor KTP dengan benar.')
+		$('#ktp-feedback').html('Masukkan NIK dengan benar.')
 	}
 	else if (ktp.length < 16) {
 		$('#ktp').addClass('is-invalid')

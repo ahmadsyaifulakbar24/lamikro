@@ -28,32 +28,32 @@
                 <form id="form">
 	                <div id="data">
 	    	        	<div class="form-group">
-	                        <label for="ktp">Nomor KTP</label>
+	                        <label for="ktp">*Nomor Induk Kependudukan (NIK)</label>
 	            			<input type="tel" class="form-control bg-white" id="ktp" maxlength="16" autofocus>
 	                        <div class="invalid-feedback" id="ktp-feedback"></div>
 	            		</div>
 	    	        	<div class="form-group">
-	                        <label for="name">Nama Lengkap</label>
+	                        <label for="name">*Nama Lengkap</label>
 	            			<input type="text" class="form-control bg-white" id="name">
 	                        <div class="invalid-feedback" id="name-feedback"></div>
 	            		</div>
 	                    <div class="form-group">
-	                        <label for="npwp">Nomor NPWP (Optional)</label>
+	                        <label for="npwp">NPWP Pribadi</label>
 	                        <input type="tel" class="form-control bg-white" id="npwp" maxlength="20" autocomplete="off">
 	                        <div class="invalid-feedback" id="npwp-feedback"></div>
 	                    </div>
 	                    <div class="form-group">
-	                        <label for="email">Email</label>
+	                        <label for="email">*Email</label>
 	                        <input type="email" class="form-control bg-white" id="email">
 	                        <div class="invalid-feedback" id="email-feedback"></div>
 	                    </div>
 	                    <div class="form-group">
-	                        <label for="phone">Nomor Telepon</label>
+	                        <label for="phone">*No. Telp/HP</label>
 	                        <input type="tel" class="form-control bg-white" id="phone">
 	                        <div class="invalid-feedback" id="phone-feedback"></div>
 	                    </div>
 	                    <div class="form-group">
-	                        <label for="businessName">Nama Usaha</label>
+	                        <label for="businessName">*Nama Usaha</label>
 	                        <input type="text" class="form-control bg-white" id="businessName">
 	                        <div class="invalid-feedback" id="businessName-feedback"></div>
 	                    </div>
@@ -64,29 +64,29 @@
 	                        <!-- <small class="text-muted text-justify pt-1">*Sebagai UKM yang handal, diharapkan memiliki Izin IUMKM yg mudah. cara mengurusnya cukup sampai dikantor kecamatan, GRATIS</small> -->
 	                    </div>
 	                    <div class="form-group">
-	                        <label for="businessAddress">Alamat Usaha</label>
+	                        <label for="businessAddress">*Alamat Usaha</label>
 	                        <textarea class="form-control bg-white" id="businessAddress"></textarea>
 	                        <div class="invalid-feedback" id="businessAddress-feedback"></div>
 	                    </div>
 	                    <div class="form-group">
-	                        <label for="username">Nama Akun</label>
+	                        <label for="username">*Nama Akun</label>
 	                        <input type="text" class="form-control bg-white first" id="username" maxlength="30">
 	                        <div class="invalid-feedback" id="username-feedback"></div>
 	                    </div>
 	                    <div class="form-group position-relative">
-	                        <label for="password">Kata Sandi</label>
+	                        <label for="password">*Kata Sandi</label>
 	                        <input type="password" class="form-control bg-white" id="password" minlength="6" maxlength="32" autocomplete="on">
 	                        <div class="invalid-feedback" id="password-feedback"></div>
 	                        <i class="password mdi mdi-eye-off" data-id="password"></i>
 	                    </div>
 	                    <div class="form-group position-relative">
-	                        <label for="cpassword">Konfirmasi Kata Sandi</label>
+	                        <label for="cpassword">*Konfirmasi Kata Sandi</label>
 	                        <input type="password" class="form-control bg-white" id="cpassword" minlength="6" maxlength="32" autocomplete="on">
 	                        <div class="invalid-feedback" id="cpassword-feedback"></div>
 	                        <i class="password mdi mdi-eye-off" data-id="cpassword"></i>
 	                    </div>
 	                    <div class="form-group position-relative">
-	                        <label class="pt-1">Captcha</label>
+	                        <label class="pt-1">*Captcha</label>
 	                        <div class="row">
 		                        <div class="col-sm-3 col-4 pt-1">
 			                        <span id="text-captcha">5 + 5 = </span>
