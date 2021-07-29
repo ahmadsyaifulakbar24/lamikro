@@ -154,8 +154,8 @@
 	            <footer class="pb-5">
 					<div class="container-fluid d-flex flex-column">
 						<small class="font-weight-500">"sistem aplikasi ini sudah sesuai dengan SAK EMKM"</small>
-						<small class="font-weight-500">Copyright © 2020. Asdep Pengembangan Kewirausahaan - Kementerian KUKM RI</small>
-						<small class="font-weight-500">Versi 3.0</small>
+						<small class="font-weight-500">Copyright © 2021. Biro Komunikasi dan Teknologi Informasi - Kementerian KUKM RI</small>
+						<small class="font-weight-500">Versi 3.1</small>
 					</div>
 				</footer>
 	        </div>
