@@ -18,7 +18,7 @@
 								<li class="list-inline-item text-muted">Nama Akun</li>
 							</ul>
 						</div>
-                        <div class="grid border p-4">
+                        <!-- <div class="grid border p-4">
                             <div class="row">
                                 <div class="col-xl-2 col-lg-3 col-sm-3 col-12">
                                     <small class="font-weight-500 py-2">Cari Nama Akun:</small>
@@ -30,7 +30,7 @@
                                     <button class="btn btn-sm btn-danger btn-block font-weight-bold">Cari</button>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="grid border pt-1">
                             <div class="item-wrapper">
                                 <div class="table-responsive">
