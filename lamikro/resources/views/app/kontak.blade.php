@@ -37,7 +37,7 @@
 		                                </div>
                                 		<div class="col-12 mb-4 pb-4 border-bottom subrek">
                                 			<p class="font-weight-bold"><i class="mdi mdi-email-outline mdi-1x pr-2"></i>Email</p>
-		                                    <p class="pl-4">asdepkewirausahaan@lamikro.com</p>
+		                                    <p class="pl-4">infolamikro@kemenkopukm.go.id</p>
 		                                </div>
                                 		<div class="col-12">
                                 			<p class="font-weight-bold"><i class="mdi mdi-map-marker-outline mdi-1x pr-2"></i>Alamat</p>

@@ -46,9 +46,7 @@
                                 </div>
                                 <div class="col subrek">
                                     <h5 class="font-weight-bold">Email</h5>
-                                    <small class="text-secondary">
-                                        asdepkewirausahaan@lamikro.com
-                                    </small>
+                                    <small class="text-secondary">infolamikro@kemenkopukm.go.id</small>
                                 </div>
                             </div>
                         </div>
