@@ -26,8 +26,8 @@
 	<div id="accountSection202"></div>
 	<hr style="margin-top:70px;border-top:2px solid #d82027;border-bottom:none">
 	<p class="small font-weight-bold">"sistem aplikasi ini sudah sesuai dengan SAK EMKM"</p>
-	<p class="small font-weight-bold">Copyright © 2020. Asdep Pengembangan Kewirausahaan - Kementerian KUKM RI</p>
-	<p class="small font-weight-bold">Versi 3.0</p><br>
+	<p class="small font-weight-bold">Copyright © 2021. Biro Komunikasi dan Teknologi Informasi - Kementerian KUKM RI</p>
+	<p class="small font-weight-bold">Versi 3.1</p><br>
 
 	<img src="{{asset('images/logo/logo.jpg')}}" width="150" style="padding-top:30px">
 	<img src="{{asset('images/logo/qrcode.png')}}" width="50" style="float:right;padding-top:30px">
@@ -36,26 +36,24 @@
 	<div class="mt-4" id="accountSection203"></div>
 	<hr style="margin-top:320px;border-top:2px solid #d82027;border-bottom:none">
 	<p class="small font-weight-bold">"sistem aplikasi ini sudah sesuai dengan SAK EMKM"</p>
-	<p class="small font-weight-bold">Copyright © 2020. Asdep Pengembangan Kewirausahaan - Kementerian KUKM RI</p>
-	<p class="small font-weight-bold">Versi 3.0</p>
+	<p class="small font-weight-bold">Copyright © 2021. Biro Komunikasi dan Teknologi Informasi - Kementerian KUKM RI</p>
+	<p class="small font-weight-bold">Versi 3.1</p>
 	
-	<script type="text/javascript">
+	@include('app.partials.footer')
+	<script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+	<script src="{{asset('vendor/jquery/number.js')}}"></script>
+	<script src="{{asset('vendor/jquery/date.js')}}"></script>
+	<script>
 		const date = '{{Request::route("date")}}'
-		const api_url = 'https://lamikro.com/e_gl/api/Services/'
-		const token = localStorage.getItem('token')
-	</script>
-	<script type="text/javascript" src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-	<script type="text/javascript" src="{{asset('vendor/jquery/number.js')}}"></script>
-	<script type="text/javascript" src="{{asset('vendor/jquery/date.js')}}"></script>
-	<script type="text/javascript">
 		$.ajax({
-			url: api_url+'metadata/userdata',
-			type: 'GET',
-			dataType: 'JSON',
-			headers: {
-				'token-id': token
-			},
-			success: function(result) {
+	        url: `${api_url}metadata/userdata`,
+	        type: 'GET',
+	        dataType: 'JSON',
+	        headers: {
+	            'token-id': token
+	        },
+	        success: function(result) {
+				// console.log(result)
 				let alamat_usaha = result.alamat_usaha
 				let npwp = result.npwp
 				if(alamat_usaha.length >= 80) {
@@ -71,13 +69,14 @@
 			}
 		})
 		$.ajax({
-			url: api_url+'neraca/'+date,
+			url: `${api_url}neraca/${date}`,
 			type: 'GET',
 			dataType: 'JSON',
 			headers: {
 				'token-id': token
 			},
 			success: function(result) {
+				// console.log(result)
 				let neracaSection = []
 				$.each(result.accountSection, function(index, value){
 					neracaSection[index] = {
