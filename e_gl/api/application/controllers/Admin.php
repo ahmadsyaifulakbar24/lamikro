@@ -11,11 +11,15 @@ class Admin extends CI_Controller {
 				$result = json_decode($data, true);
 				$dataUserArr = array();
 				$limit = projectbase_post('limitPage');
-				$page = (projectbase_post('page')-1)*$limit;
-				if(projectbase_post('query') !=''){
-					$dataUser = projectbase_query_block("select * from _report_user where username like '%".projectbase_post('query')."%' or name like '%".projectbase_post('query')."%' or email like '%".projectbase_post('query')."%' or company like'%".projectbase_post('query')."%' order by id desc LIMIT ".$page.",".$limit);
+				if($limit == 'all'){
+					$dataUser = projectbase_query_block("select * from _report_user");
 				}else{
-					$dataUser = projectbase_query_block("select * from _report_user order by id desc LIMIT ".$page.",".$limit);
+					$page = (projectbase_post('page')-1)*$limit;
+					if(projectbase_post('query') !=''){
+						$dataUser = projectbase_query_block("select * from _report_user where username like '%".projectbase_post('query')."%' or name like '%".projectbase_post('query')."%' or email like '%".projectbase_post('query')."%' or company like'%".projectbase_post('query')."%' order by id desc LIMIT ".$page.",".$limit);
+					}else{
+						$dataUser = projectbase_query_block("select * from _report_user order by id desc LIMIT ".$page.",".$limit);
+					}
 				}
 				foreach($dataUser->result_array() as $item){
 					$idd = $item['id'];
