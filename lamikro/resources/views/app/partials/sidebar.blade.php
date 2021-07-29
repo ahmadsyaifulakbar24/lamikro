@@ -7,7 +7,7 @@
 					<div class="border-bottom pb-2 mb-2">
 						<li class="{{Request::is('app/admin')?'active':''}}">
 							<a href="{{url('app/admin')}}">
-								<span class="link-title">Dashboard</span>
+								<span class="link-title">Dashboard Statistik</span>
 								<i class="mdi mdi-2x mdi-apps link-icon"></i>
 							</a>
 						</li>

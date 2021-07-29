@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
     <head>
-    	<title>Dashboard Admin • LAMIKRO</title>
+    	<title>Dashboard Statistik • LAMIKRO</title>
     	@include('app.partials.head')
     </head>
 	<body class="header-fixed">
@@ -11,7 +11,7 @@
 			<div class="page-content-wrapper">
 				<div class="page-content-wrapper-inner">
 					<div class="content-viewport">
-	                    <h5 class="font-weight-bold mb-4">Dashboard</h5>
+	                    <h5 class="font-weight-bold mb-4">Dashboard Statistik</h5>
 	                    <div class="row">
 	                    	<div class="col-xl-6 col-lg-12 col-md-6 mb-4">
 	                    		<div class="grid border p-4" style="height:100%">
