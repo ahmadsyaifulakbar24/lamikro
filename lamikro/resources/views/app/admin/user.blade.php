@@ -35,7 +35,7 @@
                                                 <th class="font-weight-bold">Nomor KTP</th>
                                                 <th class="font-weight-bold">Nama Akun</th>
                                                 <th class="font-weight-bold">Email</th>
-                                                <th class="font-weight-bold">Nomor Telepon</th>
+                                                <th class="font-weight-bold">No. Telp/HP</th>
                                                 <th class="font-weight-bold">Nama Usaha</th>
                                                 <th class="font-weight-bold"></th>
                                             </tr>

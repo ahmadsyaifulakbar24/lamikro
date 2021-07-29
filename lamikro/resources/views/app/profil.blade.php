@@ -103,7 +103,7 @@
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
-	                                            <label for="phone">Nomor Telepon</label>
+	                                            <label for="phone">No. Telp/HP</label>
 	                                            <input type="tel" class="form-control" id="phone" required>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>

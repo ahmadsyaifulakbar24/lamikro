@@ -98,7 +98,7 @@
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
 	                                        <div class="form-group">
-	                                            <label for="phone_number">Nomor Telepon</label>
+	                                            <label for="phone_number">No. Telp/HP</label>
 	                                            <input type="tel" class="form-control" id="phone_number" disabled>
 	                                            <div class="invalid-feedback"></div>
 	                                        </div>
