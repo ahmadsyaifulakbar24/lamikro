@@ -73,9 +73,7 @@
                                         </ol>
                                     </small>
                                     <p class="my-2 pt-2">Technical Support : </p>
-                                    <small class="text-secondary">
-                                    	Asisten Deputi Pengembangan Kewirausahaan, Deputi Bidang Pengembangan SDM - Kementerian KUMKM RI
-                                    </small>
+                                    <small class="text-secondary">Biro Komunikasi dan Teknologi Informasi - Kementerian KUKM RI</small>
                                 </div>
                             </div>
                         </div>
