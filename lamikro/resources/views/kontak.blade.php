@@ -32,7 +32,7 @@
                                 <div class="col">
                                     <h5 class="font-weight-bold">Alamat Kantor</h5>
                                     <small class="text-secondary">
-                                        Deputi Bidang Pengembangan Sumber Daya Manusia (SDM), Jl. H.R. Rasuna Said Kav. 3-4, Lantai 3 Jakarta Selatan, Jakarta 12940
+                                        Kantor Kementerian Koperasi dan UKM RI, Gedung Annex Lt.3, Jl. HR. Rasuna Said Kav 3-4 Jakarta Selatan
                                     </small>
                                 </div>
                             </div>

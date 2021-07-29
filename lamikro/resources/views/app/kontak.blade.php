@@ -41,7 +41,7 @@
 		                                </div>
                                 		<div class="col-12">
                                 			<p class="font-weight-bold"><i class="mdi mdi-map-marker-outline mdi-1x pr-2"></i>Alamat</p>
-		                                    <p class="pl-4">Jl. H. R. Rasuna Said No.Kav. 3-4, RT.6/RW.7, Kuningan, Karet Kuningan, Setia Budi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12940</p>
+		                                    <p class="pl-4">Kantor Kementerian Koperasi dan UKM RI, Gedung Annex Lt.3, Jl. HR. Rasuna Said Kav 3-4 Jakarta Selatan</p>
 		                                </div>
 		                            </div>
                                 </div>
