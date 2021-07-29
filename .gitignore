@@ -3,4 +3,5 @@ old/
 index22.html
 e_gl/api/application/cache/
 lamikro/resources/views/app/partials/footer.blade.php
+e_gl/api/application/config/database.php
 .DS_Store
