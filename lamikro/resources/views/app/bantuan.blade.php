@@ -79,7 +79,7 @@
                                 				</p>
                                 				<div class="collapse" id="c4" aria-labelledby="c4" data-parent="#accordion">
                                 					<p class="pt-3 pr-3">
-                                						<a href="{{asset('pdf/Manual Book Lamikro 3.0.pdf')}}" target="_blank" class="text-danger">
+                                						<a href="{{asset('pdf/Manual Book Lamikro 3.1.pdf')}}" target="_blank" class="text-danger">
                                 							<button class="btn btn-sm btn-danger">
 	                                							<i class="mdi mdi-download"></i>
 	                                							<span class="px-1">Unduh</span>
