@@ -12,11 +12,11 @@
                     <ul class="nav ml-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" id="appsDropdown" data-toggle="dropdown" aria-expanded="false">
-                                <img class="profile-img img-md rounded-circle accountAvatar" src="{{asset('images/profile/user.png')}}" alt="Avatar">
+                                <img class="profile-img img-md rounded-circle accountAvatar" src="{{asset('images/store/business.svg')}}" alt="Avatar">
                             </a>
                             <div class="dropdown-menu navbar-dropdown dropdown-menu-right" aria-labelledby="appsDropdown">
                                 <div class="dropdown-header">
-                                    <img class="profile-img img-lg rounded-circle accountAvatar mb-4" src="{{asset('images/profile/user.png')}}" alt="Avatar">
+                                    <img class="profile-img img-lg rounded-circle accountAvatar mb-4" src="{{asset('images/store/business.svg')}}" alt="Avatar">
                                     <p class="dropdown-title font-weight-bold" id="accountName"></p>
                                     <p class="dropdown-title-text" id="accountEmail"></p>
                                 </div>
@@ -51,7 +51,7 @@
                                         </div>
                                     </a>
                                     @endif
-                                    <a class="dropdown-list text-danger py-1" href="javascript:void(0)" id="logout">
+                                    <a class="dropdown-list text-danger py-1" onclick="return logout()">
                                         <div class="image-wrapper">
                                             <i class="mdi mdi-exit-to-app mdi-2x"></i>
                                         </div>

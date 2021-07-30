@@ -1,16 +1,5 @@
 const token = localStorage.getItem('token')
 
-function clearLocalStorage() {
-	$.ajax({
-        url: `${root}session/logout`,
-        type: 'GET',
-        success: function() {
-            localStorage.clear()
-            window.location.href = `${root}app`
-        }
-    })
-}
-
 if (localStorage.getItem('token') != null) {
     $.ajax({
         url: `${api_url}metadata/userdata`,
@@ -20,23 +9,29 @@ if (localStorage.getItem('token') != null) {
             'token-id': token
         },
         success: function(result) {
+        	// console.log(result)
             if (result.status != false) {
-                let avatar = root_api + 'e_gl/api/logo/' + result.avatar
+            	let avatar = `${root_api}e_gl/api/logo/${result.avatar}`
                 if (result.avatar == '' || result.avatar == null) {
-                    avatar = 'https://lamikro.com/public/images/store/business.svg'
+                	if (result.ref_group_user == 'J1') {
+	                	avatar = `${root_api}public/images/logo/garuda.png`
+	                } else {
+	                	avatar = `${root_api}public/images/store/business.svg`
+	                }
                 }
                 $('.profile-img').attr('src', avatar)
                 $('#accountName').html(result.name)
                 $('#accountEmail').html(result.email)
                 $('#accountCompany').html(result.company)
             } else {
-                clearLocalStorage()
+            	logout()
+                // clearLocalStorage()
             }
         }
     })
 }
 
-$('#logout').click(function() {
+function logout() {
     $.ajax({
         url: `${api_url}logout`,
         type: 'GET',
@@ -47,7 +42,18 @@ $('#logout').click(function() {
             clearLocalStorage()
         }
     })
-})
+}
+
+function clearLocalStorage() {
+	$.ajax({
+        url: `${root}session/logout`,
+        type: 'GET',
+        success: function() {
+            localStorage.clear()
+            window.location.href = `${root}app`
+        }
+    })
+}
 
 function delay(fn, ms) {
     let timer = 0
