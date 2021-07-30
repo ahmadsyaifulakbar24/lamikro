@@ -123,3 +123,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/macos,laravel,windows,sublimetext,visualstudiocode
+resources/views/app/partials/footer.blade.php
