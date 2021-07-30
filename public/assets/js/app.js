@@ -21,7 +21,7 @@ if (localStorage.getItem('token') != null) {
         },
         success: function(result) {
             if (result.status != false) {
-                let avatar = 'https://lamikro.com/e_gl/api/logo/' + result.avatar
+                let avatar = root_api + 'e_gl/api/logo/' + result.avatar
                 if (result.avatar == '' || result.avatar == null) {
                     avatar = 'https://lamikro.com/public/images/store/business.svg'
                 }
