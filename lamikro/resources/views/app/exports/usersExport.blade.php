@@ -78,7 +78,7 @@
                     <td>{{ $no++ }}.</td>
                     <td>{{ $users->username }}</td>
                     <td>{{ $users->name }}</td>
-                    <td>{{ $users->enum_gender }}</td>
+                    <td>{{ $users->gender }}</td>
                     <td>{{ $users->enum_religi }}</td>
                     <td>{{ $users->no_ktp }}</td>
                     <td>{{ $users->npwp }}</td>
