@@ -47,7 +47,7 @@
 			success: function(result) {
 				// console.log(result)
 				let alamat_usaha = result.alamat_usaha
-				let npwp = result.npwp
+				let npwp = result.npwp_usaha
 				if(alamat_usaha.length >= 80) {
 					alamat_usaha = alamat_usaha.substr(0,80)+'...'
 				}
@@ -56,7 +56,7 @@
 				}
 				$('#companyName').html(result.company)
 				$('#companyAddress').append(alamat_usaha)
-				$('#companyNumber').append(npwp_usaha)
+				$('#companyNumber').append(npwp)
 				if(date.length == 6) {
 					$('#periode').append(bulan(date.substr(4,2))+' '+date.substr(0,4))
 				} else {
