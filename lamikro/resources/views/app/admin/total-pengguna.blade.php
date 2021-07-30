@@ -14,8 +14,8 @@
                     <h5 class="font-weight-bold mb-4">Total Pengguna Lamikro: <span id="total"><i class="mdi mdi-loading mdi-spin"></i></span></h5>
     				<hr>
     				<div class="d-flex justify-content-end">
-						<a href="{{ url('app/userExport') }}">
-	                    	<button class="btn btn-sm btn-danger mb-4"><i class="mdi mdi-download pr-2"></i> Detail Pengguna</button>
+						<a href="{{ url('app/userExport') }}" class="btn btn-sm btn-danger mb-4" target="_blank">
+                    		<i class="mdi mdi-download pr-2"></i> Detail Pengguna
 	                    </a>
 	                </div>
                     <div class="row">
@@ -38,13 +38,13 @@
 					<canvas id="totalUser"></canvas>
                 </div>
 	            <!-- FOOTER -->
-	            <footer>
+	            <!-- <footer>
 					<div class="container-fluid d-flex flex-column">
 						<small class="font-weight-500">"sistem aplikasi ini sudah sesuai dengan SAK EMKM"</small>
 						<small class="font-weight-500">Copyright © 2020. Asdep Pengembangan Kewirausahaan - Kementerian KUKM RI</small>
 						<small class="font-weight-500">Versi 3.0</small>
 					</div>
-				</footer>
+				</footer> -->
 	        </div>
 	    </div>
 	</div>
@@ -63,7 +63,7 @@
 				let totalUser= []
 				$.each(data, function(key, value) {
 					tahun.push(value.tahun)
-					totalUser.push(value.jumlah_user)
+					totalUser.push(convert(value.jumlah_user))
 				})
 				var ctx = document.getElementById('totalUser').getContext('2d');
 				var chart = new Chart(ctx, {
@@ -75,8 +75,8 @@
 						labels: tahun,
 						datasets: [{
 							label: 'Time Series Pengguna Lamikro',
-							backgroundColor: 'rgb(255, 99, 132)',
-							borderColor: 'rgb(255, 99, 132)',
+							backgroundColor: 'rgb(235, 77, 75)',
+							borderColor: 'rgb(235, 77, 75)',
 							data: totalUser,
 						}]
 					},
