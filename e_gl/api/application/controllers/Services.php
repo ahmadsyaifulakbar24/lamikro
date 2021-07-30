@@ -1118,8 +1118,10 @@ class Services extends CI_Controller {
             'charset'   	=> 'utf-8',
             'protocol'  	=> 'smtp',
             'smtp_host' 	=> 'smtp.gmail.com',
-            'smtp_user' 	=> 'noreply.lamikro@gmail.com',  // Email gmail
-            'smtp_pass'   	=> 'L4m1kr0J4y4',  // Password gmail
+            // 'smtp_user' 	=> 'noreply.lamikro@gmail.com',  // Email gmail
+			// 'smtp_pass'   	=> 'L4m1kr0J4y4',  // Password gmail
+            'smtp_user' 	=> 'noreply.lamikro@kemenkopukm.go.id',  // Email gmail
+            'smtp_pass'   	=> 'DuniaAkhiratYes',  // Password gmail
             'smtp_crypto' 	=> 'ssl',
             'smtp_port'   	=> 465,
             'crlf'    		=> "\r\n",
@@ -1269,6 +1271,22 @@ class Services extends CI_Controller {
 					),
 					'accountname' => $result['accountname']
 				);
+				// Tambahan Profile Pengguna (Session)
+				$sess_array['userdata']['enum_religi'] = $result['userdata']['enum_religi'];
+				$sess_array['userdata']['tmp_lahir'] = $result['userdata']['tmp_lahir'];
+				$sess_array['userdata']['enum_edu'] = $result['userdata']['enum_edu'];
+				$sess_array['userdata']['enum_prov'] = $result['userdata']['enum_prov'];
+				$sess_array['userdata']['enum_city'] = $result['userdata']['enum_city'];
+				// Tambahan Profile Pengguna (Session)
+				$sess_array['userdata']['enum_sektor'] = $result['userdata']['enum_sektor'];
+				$sess_array['userdata']['enum_bidang'] = $result['userdata']['enum_bidang'];
+				$sess_array['userdata']['tgl_b_us'] = $result['userdata']['tgl_b_us'];
+				$sess_array['userdata']['npwp_usaha'] = $result['userdata']['npwp_usaha'];
+				$sess_array['userdata']['kaya_usaha'] = $result['userdata']['kaya_usaha'];
+				$sess_array['userdata']['volume_usaha'] = $result['userdata']['volume_usaha'];
+				$sess_array['userdata']['emp_amount'] = $result['userdata']['emp_amount'];
+				$sess_array['userdata']['capacity'] = $result['userdata']['capacity'];
+				$sess_array['userdata']['koperasi'] = $result['userdata']['koperasi'];
 				save_redis($headers['token-id'], json_encode($sess_array), 604800);
 				echo json_encode(array('status'=>true,'message'=>'Data updated'));				
 			}else{
