@@ -98,9 +98,9 @@
                     <td>{{ $users->tgl_b_us }}</td>
                     <td>{{ $users->iumkm }}</td>
                     <td>{{ $users->npwp_usaha }}</td>
-                    <td>{{ number_format($users->kaya_usaha,0,".","."); }}</td>
-                    <td>{{ number_format($users->volume_usaha,0,".","."); }}</td>
-                    <td>{{ number_format($users->emp_amount,0,".","."); }}</td>
+                    <td>{{ number_format($users->kaya_usaha,0,".",".") }}</td>
+                    <td>{{ number_format($users->volume_usaha,0,".",".") }}</td>
+                    <td>{{ number_format($users->emp_amount,0,".",".") }}</td>
                     <td>{{ $users->capacity }}</td>
                     <td>{{ ($users->koperasi == "0") ? "Tidak" : "Ya" }}</td>
                 </tr>
