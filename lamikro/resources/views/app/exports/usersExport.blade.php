@@ -75,7 +75,7 @@
             @php $no=1; @endphp
             @foreach ($data_users as $users)
                 <tr>
-                    <td>{{ $no++ }}.</td>
+                    <td>{{ $no++ }}</td>
                     <td>{{ $users->username }}</td>
                     <td>{{ $users->name }}</td>
                     <td>{{ $users->gender }}</td>
@@ -98,11 +98,11 @@
                     <td>{{ $users->tgl_b_us }}</td>
                     <td>{{ $users->iumkm }}</td>
                     <td>{{ $users->npwp_usaha }}</td>
-                    <td>{{ $users->kaya_usaha }}</td>
-                    <td>{{ $users->volume_usaha }}</td>
-                    <td>{{ $users->emp_amount }}</td>
+                    <td>{{ number_format($users->kaya_usaha,0,".","."); }}</td>
+                    <td>{{ number_format($users->volume_usaha,0,".","."); }}</td>
+                    <td>{{ number_format($users->emp_amount,0,".","."); }}</td>
                     <td>{{ $users->capacity }}</td>
-                    <td>{{ $users->koperasi }}</td>
+                    <td>{{ ($users->koperasi == "0") ? "Tidak" : "Ya" }}</td>
                 </tr>
             @endforeach
         </table>
