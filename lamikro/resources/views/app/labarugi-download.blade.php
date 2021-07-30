@@ -20,7 +20,7 @@
 		<h4 style="text-transform:uppercase;padding-bottom:10px">Laporan Laba Rugi</h4>
 		<span class="font-weight-bold" id="companyName"></span><br>
 		<span class="font-weight-bold" id="companyAddress"></span><br>
-		<span class="font-weight-bold" id="companyNumber">NPWP : </span><br>
+		<span class="font-weight-bold" id="companyNumber">NPWP Usaha : </span><br>
 		<span class="font-weight-bold" id="periode">Periode : </span><br>
 	</div>
 	<div id="accountSection"></div>
@@ -56,7 +56,7 @@
 				}
 				$('#companyName').html(result.company)
 				$('#companyAddress').append(alamat_usaha)
-				$('#companyNumber').append(npwp)
+				$('#companyNumber').append(npwp_usaha)
 				if(date.length == 6) {
 					$('#periode').append(bulan(date.substr(4,2))+' '+date.substr(0,4))
 				} else {

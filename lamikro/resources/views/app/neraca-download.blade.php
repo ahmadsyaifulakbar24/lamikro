@@ -20,7 +20,7 @@
 		<h4 style="text-transform:uppercase;padding-bottom:10px">Laporan Posisi Keuangan</h4>
 		<span class="font-weight-bold" id="companyName"></span><br>
 		<span class="font-weight-bold" id="companyAddress"></span><br>
-		<span class="font-weight-bold" id="companyNumber">NPWP : </span><br>
+		<span class="font-weight-bold" id="companyNumber">NPWP Usaha : </span><br>
 		<span class="font-weight-bold" id="periode">Periode : </span><br>
 	</div>
 	<div id="accountSection202"></div>
@@ -55,7 +55,7 @@
 	        success: function(result) {
 				// console.log(result)
 				let alamat_usaha = result.alamat_usaha
-				let npwp = result.npwp
+				let npwp = result.npwp_usaha
 				if(alamat_usaha.length >= 80) {
 					alamat_usaha = alamat_usaha.substr(0,80)+'...'
 				}
