@@ -43,42 +43,66 @@
     <div class="d-none">
         <table id="data">
             <tr>
-                <th>No</th>
-                <th>USERNAME</th>
-                <th>COMPANY</th>
-                <th>NAMA</th>
-                <th>EMAIL</th>
-                <th>PHONE NUMBER</th>
-                <th>ALAMAT</th>
-                <th>GROUP</th>
-                <th>IUMKM</th>
-                <th>NPWP</th>
-                <th>NO KTP</th>
-                <th>TANGGAL LAHIR</th>
-                <th>JENIS KELAMIN</th>
-                <th>JENIS USAHA</th>
-                <th>LATITUDE</th>
-                <th>LONGITUDE</th>
+                <th class="text-uppercase">No.</th>
+                <th class="text-uppercase">Nama Akun</th>
+                <th class="text-uppercase">Nama Lengkap</th>
+                <th class="text-uppercase">Jenis Kelamin</th>
+                <th class="text-uppercase">Agama</th>
+                <th class="text-uppercase">Nomor Induk Kependudukan (NIK)</th>
+                <th class="text-uppercase">NPWP Pribadi</th>
+                <th class="text-uppercase">Tempat Lahir</th>
+                <th class="text-uppercase">Tanggal Lahir</th>
+                <th class="text-uppercase">Pendidikan Terakhir</th>
+                <th class="text-uppercase">No. Telp/HP</th>
+                <th class="text-uppercase">Email</th>
+                <th class="text-uppercase">Alamat Rumah</th>
+                <th class="text-uppercase">Provinsi</th>
+                <th class="text-uppercase">Kab/Kota</th>
+
+                <th class="text-uppercase">Nama Usaha</th>
+                <th class="text-uppercase">Alamat Usaha</th>
+                <th class="text-uppercase">Sektor Usaha</th>
+                <th class="text-uppercase">Bidang Usaha</th>
+                <th class="text-uppercase">Tanggal Pendirian Usaha</th>
+                <th class="text-uppercase">Nomor IUMK atau NIB (Nomor Induk Berusaha)</th>
+                <th class="text-uppercase">NPWP Usaha</th>
+                <th class="text-uppercase">Kekayaan Usaha (Asset) per Tahun</th>
+                <th class="text-uppercase">Volume Usaha (Omset) per Tahun</th>
+                <th class="text-uppercase">Jumlah Karyawan</th>
+                <th class="text-uppercase">Kapasitas Produksi per Tahun</th>
+                <th class="text-uppercase">Anggota Koperasi</th>
             </tr>
             @php $no=1; @endphp
             @foreach ($data_users as $users)
                 <tr>
-                    <td>{{ $no++ }}</td>
+                    <td>{{ $no++ }}.</td>
                     <td>{{ $users->username }}</td>
-                    <td>{{ $users->company }}</td>
                     <td>{{ $users->name }}</td>
-                    <td>{{ $users->email }}</td>
-                    <td>{{ $users->phone_number }}</td>
-                    <td>{{ $users->address }}</td>
-                    <td>{{ $users->group }}</td>
-                    <td>{{ $users->iumkm }}</td>
-                    <td>{{ $users->npwp }}</td>
+                    <td>{{ $users->enum_gender }}</td>
+                    <td>{{ $users->enum_religi }}</td>
                     <td>{{ $users->no_ktp }}</td>
+                    <td>{{ $users->npwp }}</td>
+                    <td>{{ $users->tmp_lahir }}</td>
                     <td>{{ $users->tgl_lahir }}</td>
-                    <td>{{ $users->gender }}</td>
-                    <td>{{ $users->jenis_usaha }}</td>
-                    <td>{{ $users->latitude }}</td>
-                    <td>{{ $users->longitude }}</td>
+                    <td>{{ $users->enum_edu }}</td>
+                    <td>{{ $users->phone_number }}</td>
+                    <td>{{ $users->email }}</td>
+                    <td>{{ $users->address }}</td>
+                    <td>{{ $users->enum_prov }}</td>
+                    <td>{{ $users->enum_city }}</td>
+
+                    <td>{{ $users->company }}</td>
+                    <td>{{ $users->alamat_usaha }}</td>
+                    <td>{{ $users->enum_sektor }}</td>
+                    <td>{{ $users->enum_bidang }}</td>
+                    <td>{{ $users->tgl_b_us }}</td>
+                    <td>{{ $users->iumkm }}</td>
+                    <td>{{ $users->npwp_usaha }}</td>
+                    <td>{{ $users->kaya_usaha }}</td>
+                    <td>{{ $users->volume_usaha }}</td>
+                    <td>{{ $users->emp_amount }}</td>
+                    <td>{{ $users->capacity }}</td>
+                    <td>{{ $users->koperasi }}</td>
                 </tr>
             @endforeach
         </table>
