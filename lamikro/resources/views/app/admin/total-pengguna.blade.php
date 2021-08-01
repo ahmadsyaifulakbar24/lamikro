@@ -15,7 +15,7 @@
     				<hr>
     				<div class="d-flex justify-content-end">
 						<a href="{{ url('app/userExport') }}" class="btn btn-sm btn-danger mb-4" target="_blank">
-                    		<i class="mdi mdi-download pr-2"></i> Detail Pengguna
+                    		<i class="mdi mdi-download pr-2"></i>Unduh Detail Pengguna
 	                    </a>
 	                </div>
                     <div class="row">
