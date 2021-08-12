@@ -37,7 +37,7 @@ $('#form').submit(function(e){
 	let password = $('#password').val()
 	let captcha = $('#captcha').val()
 
-	if(sktp == true && sname == true && snpwp == true && semail == true && sphone == true && sbusinessName == true && sbusinessNumber == true && sbusinessAddress == true && susername == true && spassword == true && scpassword == true && scaptcha == true) {
+	if(sktp == true && sname == true && semail == true && sphone == true && sbusinessName == true && sbusinessNumber == true && sbusinessAddress == true && susername == true && spassword == true && scpassword == true && scaptcha == true) {
 		$.ajax({
 			url: api_url+'register',
 			type: 'POST',
@@ -61,19 +61,19 @@ $('#form').submit(function(e){
 				} else {
 					if(result.message == 'Username already exists') {
 						$('#username').addClass('is-invalid')
-						$('#username-feedback').html('Nama akun telah terpakai.')
+						$('#username-feedback').html('Nama akun telah digunakan.')
 						$('html, body').scrollTop(800)
 					}
 					else if(result.message == 'Username & Email already exists') {
 						$('#username').addClass('is-invalid')
-						$('#username-feedback').html('Nama akun telah terpakai.')
+						$('#username-feedback').html('Nama akun telah digunakan.')
 						$('#email').addClass('is-invalid')
-						$('#email-feedback').html('Email telah terpakai.')
+						$('#email-feedback').html('Email telah digunakan.')
 						$('html, body').scrollTop(350)
 					}
 					else if(result.message == 'Email already exists') {
 						$('#email').addClass('is-invalid')
-						$('#email-feedback').html('Nama akun telah terpakai.')
+						$('#email-feedback').html('Email telah digunakan.')
 						$('html, body').scrollTop(350)
 					}
 					$('#text').show()

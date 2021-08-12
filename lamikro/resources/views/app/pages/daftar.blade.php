@@ -39,7 +39,7 @@
 	            		</div>
 	                    <div class="form-group">
 	                        <label for="npwp">NPWP Pribadi</label>
-	                        <input type="tel" class="form-control bg-white" id="npwp" maxlength="20" autocomplete="off">
+	                        <input type="tel" class="form-control bg-white npwp" id="npwp" maxlength="20" autocomplete="off">
 	                        <div class="invalid-feedback" id="npwp-feedback"></div>
 	                    </div>
 	                    <div class="form-group">
@@ -115,31 +115,5 @@
 		@include('app.partials.footer')
         <script src="{{asset('vendor/jquery/validate.js')}}"></script>
         <script src="{{asset('api/daftar.js')}}"></script>
-        <script type="text/javascript">
-			window.snpwp = true
-        	$('#npwp').keyup(function(){
-        		let npwp = $(this).val().length
-        		if(npwp != 0) {
-	        		if(npwp < 15) {
-	        			$(this).addClass('is-invalid')
-	        			$('#npwp-feedback').html('Masukkan 15 digit angka.')
-						window.snpwp = false
-	        		}
-	        		else if(npwp == 15) {
-	        			$(this).val(formatNPWP($(this).val()))
-	        			$(this).removeClass('is-invalid')
-						window.snpwp = true
-	        		}
-	        		else if(npwp < 20) {
-	        			$(this).val('')
-	        			$(this).removeClass('is-invalid')
-						window.snpwp = true
-	        		}
-	        	} else {
-        			$(this).removeClass('is-invalid')
-					window.snpwp = true
-	        	}
-        	})
-        </script>
 	</body>
 </html>
