@@ -102,9 +102,9 @@
             </div>
         </div>
         @include('app.partials.footer')
-		<script type="text/javascript" src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
-        <script type="text/javascript" src="{{asset('vendor/jquery/number.js')}}"></script>
-        <script type="text/javascript" src="{{asset('vendor/jquery/date.js')}}"></script>
-        <script type="text/javascript" src="{{asset('api/labarugi.js')}}"></script>
+		<script src="{{asset('assets/js/html2pdf.js')}}"></script>
+        <script src="{{asset('vendor/jquery/number.js')}}"></script>
+        <script src="{{asset('vendor/jquery/date.js')}}"></script>
+        <script src="{{asset('api/labarugi.js')}}"></script>
     </body>
 </html>
