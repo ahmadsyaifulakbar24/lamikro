@@ -63,7 +63,7 @@ function labaRugi(y, m) {
     $('#accountSection').html('')
     $('#download').attr('disabled', true)
     // $('#accountFilter').html('('+monthNames[parseInt(m-1)]+' '+y+')')
-    $('iframe').attr('src', 'labarugi/download/' + y + m)
+    $('iframe').attr('src', root + 'app/labarugi/download/' + y + m)
     url = api_url + 'labaRugi/' + y + '/' + m
     if (m == '' || m == null) url = api_url + 'labaRugi/' + y
     $.ajax({

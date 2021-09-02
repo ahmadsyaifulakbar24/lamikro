@@ -62,7 +62,7 @@ function neraca(y, m) {
     $('#accountSection').html('')
     $('#download').attr('disabled', true)
     // $('#accountFilter').html('('+monthNames[parseInt(m-1)]+' '+y+')')
-    $('iframe').attr('src', 'neraca/download/' + y + m)
+    $('iframe').attr('src', root + 'app/neraca/download/' + y + m)
     $.ajax({
         url: api_url + 'neraca/' + y + m,
         type: 'GET',

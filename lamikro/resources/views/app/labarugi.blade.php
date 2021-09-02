@@ -102,7 +102,7 @@
             </div>
         </div>
         @include('app.partials.footer')
-		<script src="{{asset('assets/js/html2pdf.js')}}"></script>
+        <script src="{{asset('assets/js/html2pdf.js')}}"></script>
         <script src="{{asset('vendor/jquery/number.js')}}"></script>
         <script src="{{asset('vendor/jquery/date.js')}}"></script>
         <script src="{{asset('api/labarugi.js')}}"></script>
