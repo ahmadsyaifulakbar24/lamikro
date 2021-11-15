@@ -71,6 +71,15 @@ function neraca(y, m) {
             'token-id': token
         },
         success: function(result) {
+        	// console.log(result)
+        	let jumlah = 0
+        	$.each(result.journalReport.data, function(index, value) {
+        		if (value.acc_code == "1010") {
+        			// console.log(parseInt(value.amount))
+        			jumlah += parseInt(value.amount)
+        		}
+        	})
+        	// console.log(jumlah)
             $('#neraca').show()
             $('#loader').hide()
 
@@ -99,6 +108,7 @@ function neraca(y, m) {
             $.each(result.labaDiTahan.data, function(index, value) {
                 neracaLaba += parseInt(value.amount)
             })
+            // console.log(neracaLaba)
 
             $.each(result.journalReport.data, function(index, value) {
                 // TOTAL SECTION
@@ -188,20 +198,36 @@ function neraca(y, m) {
             // Total Section
             $.each(result.accountSection, function(index, value) {
                 sectionIndex = neracaSection.findIndex((obj => obj.id == value.id))
-                $('#totalSection' + value.id).html(convertToRupiah(String(neracaSection[sectionIndex].total)))
+                minus = String(neracaSection[sectionIndex].total).substr(0,1)
+                if (minus == '-') {
+	                $('#totalSection' + value.id).html('-'+convertToRupiah(String(neracaSection[sectionIndex].total)))
+                } else {
+	                $('#totalSection' + value.id).html(convertToRupiah(String(neracaSection[sectionIndex].total)))
+                }
             })
 
             // Total Group
             $.each(result.accountGroup, function(index, value) {
                 groupIndex = neracaGroup.findIndex((obj => obj.id == value.id))
-                $('#totalGroup' + value.id).html(convertToRupiah(String(neracaGroup[groupIndex].total)))
+                minus = String(neracaGroup[groupIndex].total).substr(0,1)
+                if (minus == '-') {
+	                $('#totalGroup' + value.id).html('-'+convertToRupiah(String(neracaGroup[groupIndex].total)))
+                } else {
+	                $('#totalGroup' + value.id).html(convertToRupiah(String(neracaGroup[groupIndex].total)))
+                }
             })
 
             // Total Account
             $.each(result.accountname, function(index, value) {
                 accountIndex = neracaAccount.findIndex((obj => obj.id == value.acc_code))
+                minus = String(neracaAccount[accountIndex].total).substr(0,1)
                 if (value.acc_code != '3500') {
-                    $('#amount' + value.acc_code).html(convertToNumber(String(neracaAccount[accountIndex].total)))
+                    // console.log(`${value.acc_code} = ${neracaAccount[accountIndex].total}`)
+                	if (minus == '-') {
+	                    $('#amount' + value.acc_code).html('-'+convertToNumber(String(neracaAccount[accountIndex].total)))
+                	} else {
+	                    $('#amount' + value.acc_code).html(convertToNumber(String(neracaAccount[accountIndex].total)))
+                	}
                 } else {
                     $('#amount3500').html(convertToNumber(String(neracaLaba)))
                 }
